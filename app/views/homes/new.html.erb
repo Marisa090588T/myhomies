@@ -13,7 +13,7 @@
   </div>
 
   <div class="form-inputs">
-    <%= f.association :users, as: :check_boxes  %>
+    <%= f.input :users, as: :check_boxes, collection: @users_collection, input_html: { multiple: true }, include_hidden: false %>
   </div>
 
   <div class="form-actions">

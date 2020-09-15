@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
-  before_action :set_users, :set_homie, only: [:new, :create]
+  before_action :set_homie
+  before_action :set_users
 
   # def index
   #   @homes = Home.all
@@ -7,21 +8,27 @@ class HomesController < ApplicationController
 
   def new
     @home = Home.new
+    @users_collection = []
+    @users.each do |user|
+
+    @users_collection << user.first_name
+    end
   end
 
   def create
+    # @home = Home.find(params[:home_id])
     @home = Home.new(home_params)
-
-    @users.each do |user|
-      user.first_name
-    end
+    @my_homes = []
 
     if @home.save
+      @homie.home = @home
+      @homie.update(home: @home)
+      @my_homes << @home
       redirect_to dashboard_path, notice: "Congrats, you've created a home!"
     else
       render :new
     end
-    raise
+
   end
 
   def show
@@ -31,7 +38,7 @@ class HomesController < ApplicationController
   private
 
   def set_homie
-    @homie == current_user
+    @homie = current_user
   end
 
   def set_users
