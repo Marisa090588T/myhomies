@@ -1,0 +1,7 @@
+<h1>Dashboard</h1>
+<% if current_user.home %>
+  <%= current_user.home.name %>
+  <%= current_user.home.address %>
+<% else %>
+  "No home yet :("
+<% end %>

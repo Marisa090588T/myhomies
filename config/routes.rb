@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resource :dashboard, only: :show
 
-  resources :homes, only: [:create, :edit, :update] do
+  resources :homes, only: [:new, :create, :show] do
     resources :expenses, only: [:create, :new, :index, :show] do
       resources :expense_shares, only: :update
-    end 
+    end
 
   #   resources :chores, only: [:create, :new, :index, :show] do
   #     patch :done, on: :member

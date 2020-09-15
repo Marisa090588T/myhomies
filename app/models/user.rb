@@ -6,4 +6,5 @@ class User < ApplicationRecord
           has_many :chores
           has_many :expenses, through: :expense_shares
           belongs_to :home
+  validates :name, presence: true
 end
