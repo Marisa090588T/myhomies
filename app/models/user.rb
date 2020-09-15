@@ -5,5 +5,5 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
           has_many :chores
           has_many :expenses, through: :expense_shares
-          belongs_to :home
+          belongs_to :home, optional: true
 end
