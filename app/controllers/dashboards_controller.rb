@@ -1,8 +1,6 @@
 class DashboardsController < ApplicationController
-  def show
-    # @user =
-    # @homies = Home.all.select {|home| home == current_user.home }
-
-    @my_homes = Home.all.select {|home| current_user.home == home }
-  end
+ def show
+   @home = Home.find {|home| current_user.home == home }
+   @homies = User.all.select(params[:home] == @home)
+ end
 end
