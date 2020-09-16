@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :expenses, only: [:create, :new, :index, :show] do
       resources :expense_shares, only: :update
     end
-    
+  end
+
     resources :chores, only: [:create, :new, :index, :show] do
       patch :done, on: :member
     end
@@ -23,5 +24,7 @@ Rails.application.routes.draw do
   # resources :expense_share, only: [] do
   #   patch :check, on: :member
   # end
-
+  if Rails.env.development?
+    get 'kitchensink', to: 'pages#kitchensink'
+  end
 end
