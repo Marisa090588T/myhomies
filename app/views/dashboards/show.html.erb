@@ -16,4 +16,5 @@
  <p><%= link_to "Add a home", new_home_path %></p>
 <% end %>
 <p> To invite new homie - send them this link </p>
-<%=home_invitation_url(@home.invite_token) %>
+<%=new_invitation_url(@home.invite_token) %>
+<%= link_to 'refresh invite link', home_invitations_path(@home), method: :patch, remote: true %>

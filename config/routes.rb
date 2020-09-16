@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :homes, only: [:new, :create, :show] do
+    resource :invitations, only: :update
     resources :expenses, only: [:create, :new, :index, :show] do
       resources :expense_shares, only: :update
     end
@@ -28,5 +29,5 @@ Rails.application.routes.draw do
   if Rails.env.development?
     get 'kitchensink', to: 'pages#kitchensink'
   end
-  get "homes/:home_invite_token/invitation", to: "invitations#new", as: "home_invitation"
+  get "homes/:home_invite_token/invitations", to: "invitations#new", as: "new_invitation"
 end

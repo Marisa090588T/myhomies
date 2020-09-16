@@ -9,7 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
       set_home
       resource.home = @home
       resource.save
-      redirect_to dashboard_path
+    # else render :new
     end
 
   end

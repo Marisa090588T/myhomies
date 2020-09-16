@@ -19,7 +19,7 @@ class HomiesController < ApplicationController
     if @homie.save
       @homie.home = @home
       @homies < @homie
-      redirect_to dashboard_path, notice: "Congrats, your home has a new homie!"
+      # redirect_to dashboard_path, notice: "Congrats, your home has a new homie!"
     else
       render :new
     end
