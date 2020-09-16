@@ -1,12 +1,17 @@
-<h1>My Home</h1>
 
 <% if @home %>
-    <p><%= @home.name %></p>
-    <p><%= @home.address %></p>
-    <% @homies.each do |homie| %>
-      <p><%= homie.first_name %></p>
-      <p><%= homie.last_name %></p>
-    <% end %>
+
+   <h1><%= @home.name.capitalize %></h1>
+   <p>@ <%= @home.address %></p>
+
+   <h2>My Homies</h2>
+   <ul>
+     <% @homies.each do |homie| %>
+     <li><%= homie.first_name %> <%= homie.last_name %></li>
+     <% end %>
+   </ul>
+
 <% else %>
-  "No home yet :("
+ "No home yet :("
+ <p><%= link_to "Add a home", new_home_path %></p>
 <% end %>
