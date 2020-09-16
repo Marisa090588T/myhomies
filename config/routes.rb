@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :chores, only: [:create, :new, :index, :show] do
       patch :done, on: :member
     end
-  end
+
 
     resources :chores, only: [:create, :new, :index, :show] do
       patch :done, on: :member
