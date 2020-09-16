@@ -1,0 +1,23 @@
+<h1>Bill detail</h1>
+
+<div class="card" style="width: 18rem;">
+  <table>
+    <tbody>
+      <tr><th>Bill:</th><td><%= expense.name %></td></tr>
+      <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
+      <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
+      <tr><th>Description:</th><td><%= expense.descreption %></td></tr>
+      <tr>
+      <% if @expense_share.paid %>
+          <th><%= "Paid" %></th>
+      <% else %>
+          <th><%= "Unpaid" %></th>
+      <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="links">
+    <%= link_to " Back ", home_expenses_path %>
+</div>
