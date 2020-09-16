@@ -3,10 +3,6 @@ class ChoresController < ApplicationController
     @chores = Chore.all
   end
 
-  def show
-    @chore = Chore.find(params[:id])
-  end
-
   def new
     @home = Home.find(params[:home_id])
     @chore = Chore.new
@@ -21,16 +17,22 @@ class ChoresController < ApplicationController
     @chore.assignee = @home.users.sample
     
     if @chore.save
-        redirect_to home_chores_path, notice: 'Chore was successfully listed!'      
+        redirect_to home_chores_path, notice: 'Chore was successfully listed!'    
     else
       render :new
     end
+  end
+    
+  def show
+    @home = Home.find(params[:home_id])
+    @chore = Chore.find(params[:id])
+    @chore.home = @home
   end
 
   private
 
   def chore_params
-    params.require(:chore).permit(:name, :description)
+    params.require(:chore).permit(:name, :description, :assignee)
   end
 
 end
