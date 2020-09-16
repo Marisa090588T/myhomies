@@ -17,21 +17,20 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @home = Home.find(params[:home_id])
     @expense.user_id = current_user.id
-    # @expense.user_id = current_user
     @expense.home = current_user.home
-    @par_amount = @expense.amount / @expense.home.users.count
+    @share_amount = @expense.amount / @home.user_ids.count
     # if choose someone number = ([] << user ).count
 
     if @expense.save
-      @expense.home.users.each do |user| #hes many users
+      @expense.home.users.each do |user|
         @expense.expense_share.create!(
         expense_id: Expense.find(@expense.id),
         user_id: user.id,
         paid: false,
-        amount: @par_amount #no amount yet
+        share_amount: @share_amount
         )
       end
-      redirect_to home_expense_path(@expense.home, @expense)
+      redirect_to home_expenses_path(@home, @expense)
     else
       render :new
     end
@@ -39,7 +38,7 @@ class ExpensesController < ApplicationController
 
   private
 
-  def expenses_params
+  def expense_params
     params.require(:expense).permit(:name, :amount, :due_on, :description)
   end
 end
