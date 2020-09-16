@@ -14,17 +14,23 @@ class ChoresController < ApplicationController
   end
 
   def create
+    @home = Home.find(params[:home_id])
     @chore = Chore.new(chore_params)
     @chore.home = @home
-    @chore.users = @users
+    @chore.completed = false
+    @chore.assignee = @home.users.sample
     
     if @chore.save
-      @chore.users.each do |user|
         redirect_to home_chores_path, notice: 'Chore was successfully listed!'      
-      end
     else
       render :new
     end
+  end
+
+  private
+
+  def chore_params
+    params.require(:chore).permit(:name, :description)
   end
 
 end

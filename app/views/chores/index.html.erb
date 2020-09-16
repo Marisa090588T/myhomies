@@ -1,25 +1,10 @@
-<div class="container">
-  <h1>Chores</h1>
-</div>
+<h1>All chores</h1>
 
-<% @chores.each do |chore| %>
+<% @chores.each do |chore|
   <div class="card" style="width: 18rem;">
     <table>
       <tbody>
-        <tr><th>Chores:</th><td><%= link_to chore.name, home_chore_path(chore), class: %>
-
-<%# <div class="container chores">
-  <div class="mb-3">
-    <%= link_to 'View Chores', chores_path(@household), class: 'btn btn-primary w-100 text-white' %>
-
-
-<h1>All bills</h1>
-
-<% @expenses.each do |expense|
-  <div class="card" style="width: 18rem;">
-    <table>
-      <tbody>
-          <tr><th>Bill:</th><td><%= link_to expense.name, home_expense_expense_share_path(expense), class:"text-center" %></td></tr>
+          <tr><th>Chores:</th><td><%= link_to chore.name, home_expense_expense_share_path(expense), class:"text-center" %></td></tr>
           <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
           <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
           <tr>
