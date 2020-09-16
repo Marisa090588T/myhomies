@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :homes, only: [:create, :edit, :update] do
+  resources :homes, only: [:new, :create, :show] do
     resources :expenses, only: [:create, :new, :index, :show] do
       resources :expense_shares, only: :update
-    end 
+    end
 
   #   resources :chores, only: [:create, :new, :index, :show] do
   #     patch :done, on: :member

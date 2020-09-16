@@ -1,0 +1,13 @@
+<h1>My Homes</h1>
+
+<% if @my_homes %>
+  <% @my_homes.each do |home| %>
+    <p><%= home.name %></p>
+    <p><%= home.address %></p>
+    <% home.users.each do |homie| %>
+      <p><%= homie.first_name %></p>
+    <% end %>
+  <% end %>
+<% else %>
+  "No home yet :("
+<% end %>
