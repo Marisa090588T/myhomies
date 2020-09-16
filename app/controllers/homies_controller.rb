@@ -1,5 +1,6 @@
 class HomiesController < ApplicationController
   before_action :set_home
+  before_action :set_homie
 
   def index
     @homies.all
