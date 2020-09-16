@@ -19,7 +19,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :homies, only: [:index, :new, :create]
+    resources :chores, only: [:create, :new, :index, :show] do
+      patch :done, on: :member
+    end
+   resources :homies, only: [:index, :new, :create]
 
   # resources :expense_share, only: [] do
   #   patch :check, on: :member

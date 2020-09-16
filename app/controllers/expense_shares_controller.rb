@@ -5,13 +5,13 @@ class ExpenseSharesController < ApplicationController
     @expense_share.expense = @expense
 
     if @expense_share.update(expense_share_params)
-      redirect_to home_expense_expense_share_path(@expense, @expense_share), notice: 'Bill was updated'
+      redirect_to home_expense_path(@home, @expense), notice: 'Bill status was updated'
     end
   end
 
   private
 
   def expense_shares_params
-    params.require(:expense_shares).permit(:paid) #amount or per amount
+    params.require(:expense_shares).permit(:paid) 
   end
 end
