@@ -3,10 +3,10 @@
 <div class="card" style="width: 18rem;">
   <table>
     <tbody>
-      <tr><th>Bill:</th><td><%= expense.name %></td></tr>
-      <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
-      <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
-      <tr><th>Description:</th><td><%= expense.descreption %></td></tr>
+      <tr><th>Bill:</th><td><%= @expense.name %></td></tr>
+      <tr><th>$ </th><td><%= @expense.amount %></td><td>to pay</td></tr>
+      <tr><th>Due on:</th><td><%= @expense.due_on %></td></tr>
+      <tr><th>Description:</th><td><%= @expense.description %></td></tr>
       <tr>
       <% if @expense_share.paid %>
           <th><%= "Paid" %></th>
