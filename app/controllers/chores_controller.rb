@@ -1,6 +1,8 @@
 class ChoresController < ApplicationController
   def index
     @chores = Chore.all
+    @home = Home.find(params[:home_id])
+    @chore = Chore.find_by(assignee: current_user, home: @home)
   end
 
   def new
