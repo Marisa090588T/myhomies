@@ -11,3 +11,35 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: black;
+}
+
+.app {
+  display: flex;
+  max-width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+  flex-direction: column;
+  background-color: #222;
+  color: white;
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+  .app-menu {
+    background-color: #333;
+    min-height: 50px;
+  }
+  .app-header {
+    background-color: #333;
+    min-height: 50px;
+  }
+  .app-content {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
