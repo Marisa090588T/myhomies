@@ -3,10 +3,11 @@
 <div class="card" style="width: 18rem;">
   <table>
     <tbody>
-      <tr><th>Title:</th><td><%= chore.name %></td></tr>
-      <tr><th>Description:</th><td><%= chore.descreption %></td></tr>
+      <tr><th>Title:</th><td><%= @chore.name %></td></tr>
+      <tr><th>Description:</th><td><%= @chore.description %></td></tr>
+      <tr><th>Assigned To:</th><td><%= @chore.assignee %></td></tr>
       <tr>
-      <% if @chore.compleated %>
+      <% if @chore.completed %>
           <th><%= "Done" %></th>
       <% else %>
           <th><%= "Not yet" %></th>
