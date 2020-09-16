@@ -1,6 +1,6 @@
 class HomiesController < ApplicationController
-  def show
-    @home = Home.find(params[:id])
-    @homies = @home.users
+  def index
+    @home = current_user(params[:home])
+    @homies = User.all.select(@home)
   end
 end

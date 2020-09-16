@@ -1,12 +1,12 @@
-<h1>Create new bill</h1>
+<h1>Create new expense</h1>
 
 <div>
-  <%= simple_form_for [@user, @expense] do |f|%>
+  <%= simple_form_for [@home, @expense] do |f|%>
     <%= f.input :name %>
     <%= f.input :amount %>
     <%= f.input :due_on %>
-    <%= f.input :description %>
-    <%= f.button :submit, value: 'Add bill', class: 'btn btn-primary' %>
+    <%= f.input :description, as: :check_boxes, collection: Expense::EXPENSES, input_html: { multiple: true }, include_hidden: false %>
+    <%= f.button :submit, value: 'Add expense', class: 'btn btn-primary' %>
   <% end %>
 </div>
 
