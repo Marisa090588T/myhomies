@@ -1,0 +1,21 @@
+<h1>Chore detail</h1>
+
+<div class="card" style="width: 18rem;">
+  <table>
+    <tbody>
+      <tr><th>Title:</th><td><%= chore.name %></td></tr>
+      <tr><th>Description:</th><td><%= chore.descreption %></td></tr>
+      <tr>
+      <% if @chore.compleated %>
+          <th><%= "Done" %></th>
+      <% else %>
+          <th><%= "Not yet" %></th>
+      <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="links">
+    <%= link_to " Back ", home_chores_path %>
+</div>
