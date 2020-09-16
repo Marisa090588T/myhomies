@@ -1,9 +1,10 @@
 <h1>Create new chore</h1>
 
 <div>
-  <%= simple_form_for [@user, @chore] do |f|%>
+  <%= simple_form_for [@home, @chore] do |f|%>
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f. :assignee %>
     <%= f.button :submit, value: 'Add chore', class: 'btn btn-primary' %>
   <% end %>
 </div>
