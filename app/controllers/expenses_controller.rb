@@ -20,6 +20,7 @@ class ExpensesController < ApplicationController
     # @expense.user_id = current_user
     @expense.home = current_user.home
     @par_amount = @expense.amount / @expense.home.users.count
+    # if choose someone number = ([] << user ).count
 
     if @expense.save
       @expense.home.users.each do |user| #hes many users
