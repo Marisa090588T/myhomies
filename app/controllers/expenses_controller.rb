@@ -1,6 +1,8 @@
 class ExpensesController < ApplicationController
   def index
+    # @home = current_user.home
     @expenses = Expense.all
+    @home = Home.find(params[:home_id])
   end
 
   def show

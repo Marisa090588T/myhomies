@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_09_16_023746) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,8 +89,6 @@ ActiveRecord::Schema.define(version: 2020_09_16_023746) do
     t.string "username"
     t.bigint "home_id"
     t.string "nickname"
-    t.string "invitation_token"
-    t.integer "invited_by"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["home_id"], name: "index_users_on_home_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
