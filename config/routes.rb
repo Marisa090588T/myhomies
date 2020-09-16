@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       resources :expense_shares, only: :update
     end
 
-  end
 
 
     resources :chores, only: [:create, :new, :index, :show] do
