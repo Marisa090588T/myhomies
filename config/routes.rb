@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   if Rails.env.development?
     get 'kitchensink', to: 'pages#kitchensink'
   end
-  get "homes/:home_invite_token/invitation", to: "invitations#new"
+  get "homes/:home_invite_token/invitation", to: "invitations#new", as: "home_invitation"
 end

@@ -10,6 +10,10 @@ class InvitationsController < ApplicationController
     end
   end
 
+  def update
+    @home.regenerate_invite_token
+  end
+
 private
 
   def set_home

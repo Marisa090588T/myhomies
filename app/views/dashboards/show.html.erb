@@ -15,3 +15,5 @@
  "No home yet :("
  <p><%= link_to "Add a home", new_home_path %></p>
 <% end %>
+<p> To invite new homie - send them this link </p>
+<%=home_invitation_url(@home.invite_token) %>

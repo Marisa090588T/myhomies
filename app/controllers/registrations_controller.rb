@@ -1,12 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
   def  new
-    set_home
+    set_home if params[:invite_token]
   super
   end
   def create
-    set_home
     super
     if resource.save && params[:user].has_key?(:invite_token)
+      set_home
       resource.home = @home
       resource.save
       redirect_to dashboard_path
