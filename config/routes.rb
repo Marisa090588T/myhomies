@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {registrations: "registrations"}
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resource :dashboard, only: :show
-  
+
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
@@ -12,14 +12,8 @@ Rails.application.routes.draw do
     resources :expenses, only: [:create, :new, :index, :show] do
       resources :expense_shares, only: :update
     end
-
-  #   resources :chores, only: [:create, :new, :index, :show] do
-  #     patch :done, on: :member
-  #   end
   end
 
-  # resources :expense_share, only: [] do
-  #   patch :check, on: :member
-  # end
+  get "homes/:home_invite_token/invitation", to: "invitations#new"
 
 end

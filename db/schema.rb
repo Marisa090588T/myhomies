@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_051148) do
+ActiveRecord::Schema.define(version: 2020_09_16_023746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 2020_09_15_051148) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "invite_token"
+    t.index ["invite_token"], name: "index_homes_on_invite_token", unique: true
   end
 
   create_table "messages", force: :cascade do |t|
@@ -86,6 +88,8 @@ ActiveRecord::Schema.define(version: 2020_09_15_051148) do
     t.string "username"
     t.bigint "home_id"
     t.string "nickname"
+    t.string "invitation_token"
+    t.integer "invited_by"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["home_id"], name: "index_users_on_home_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
