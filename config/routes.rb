@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :expenses, only: [:create, :new, :index, :show] do
       resources :expense_shares, only: :update
     end
-    
+  end
+
     resources :chores, only: [:create, :new, :index, :show] do
       patch :done, on: :member
     end
