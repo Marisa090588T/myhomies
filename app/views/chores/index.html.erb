@@ -6,8 +6,7 @@
       <tbody>
           <tr><th>Chores:</th><td><%= link_to chore.name, home_chore_path(@home, @chore), class:"text-center" %></td></td></tr>
           <tr><th>Description:</th><td><%= chore.description %></td></tr>
-          <tr><th>Assigned to:</th><td><%= chore.assignee %></td></tr>
-
+          <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
           <tr>
           <%= render "switch", chore: chore %>
           </tr>
