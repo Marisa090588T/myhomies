@@ -3,10 +3,13 @@
   <h1><%= @home.name.capitalize %></h1>
   <p>@ <%= @home.address %></p>
 
-  <h2>My Homies</h2>
+
+
+<h2><%= @home.name.capitalize %>'s Homies</h2>
+
   <ul>
     <% @homies.each do |homie| %>
-    <li><%= homie.first_name %> <%= homie.last_name %></li>
+      <li><%= homie.first_name %> <%= homie.last_name %></li>
     <% end %>
   </ul>
 
