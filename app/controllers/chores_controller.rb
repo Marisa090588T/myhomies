@@ -37,4 +37,15 @@ class ChoresController < ApplicationController
     params.require(:chore).permit(:name, :description, :assignee)
   end
 
+  def complete
+    @home = Home.find(params[:home_id])
+    @chore = Chore.find(params[:id])
+    @home.chore = @home
+    @chore.completed = true
+    @chore.save
+    redirect_to dashboard_path # TODO: should go back show page?
+  end
 end
+
+# change status as mark (conplete or not)
+# need a update?
