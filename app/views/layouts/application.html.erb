@@ -23,9 +23,12 @@
       <%= yield %>
     </div>
 
+    <% if user_signed_in? && current_user.home %>
     <div class="app-menu">
       <%= render 'shared/add_button' %>
     </div>
+    <% end %>
+
 
   </div>
 
