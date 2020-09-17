@@ -15,16 +15,38 @@ Home.create!(
     name: Faker::BossaNova.song,
     address: Faker::Address.street_address,
     id: 1
-  )
+)
 
-  User.create!(
+User.create!(
     first_name: Faker::Artist.name,
     last_name: Faker::Creature::Animal.name,
     username: Faker::Games::Pokemon.name,
-    email: user@user.com,
-    password: 123456,
+    email: "first_user@user.com",
+    password: "123456",
     home_id: 1
-  )
+)
+User.create!(
+    first_name: Faker::Artist.name,
+    last_name: Faker::Creature::Animal.name,
+    username: Faker::Games::Pokemon.name,
+    email: "second_user@user.com",
+    password: "123456",
+    home_id: 1
+)
+User.create!(
+    first_name: Faker::Artist.name,
+    last_name: Faker::Creature::Animal.name,
+    username: Faker::Games::Pokemon.name,
+    email: "homeless_user@user.com",
+    password: "123456"
+)
+User.create!(
+    first_name: Faker::Artist.name,
+    last_name: Faker::Creature::Animal.name,
+    username: Faker::Games::Pokemon.name,
+    email: "home_create@user.com",
+    password: "123456"
+)
 
 
 # 2.times do
