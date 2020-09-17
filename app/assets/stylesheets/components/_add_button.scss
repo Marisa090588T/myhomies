@@ -68,3 +68,7 @@ a:hover{
   margin: auto;
   width: auto;
 }
+
+.dropdown-menu.show a {
+  color: $text-bright;
+}
