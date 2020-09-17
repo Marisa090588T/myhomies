@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
   belongs_to :home, optional: true
-  has_many :chores
+  has_many :chores, foreign_key: "assignee_id"
   has_many :expense_shares
   has_many :expenses, through: :expense_shares
   validates :first_name, presence: true
