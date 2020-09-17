@@ -1,10 +1,10 @@
 class HomesController < ApplicationController
-  before_action :set_homie
-  before_action :set_users
+ before_action :set_homie
+ before_action :set_users
 
-  # def index
-  #   @homes = Home.all
-  # end
+ # def index
+ #   @homes = Home.all
+ # end
 
   def new
     @home = Home.new
@@ -18,12 +18,12 @@ class HomesController < ApplicationController
   def create
     # @home = Home.find(params[:home_id])
     @home = Home.new(home_params)
-    @my_homes = []
 
     if @home.save
       @homie.home = @home
       @homie.update(home: @home)
-      @my_homes << @home
+      @chatroom = Chatroom.create(name: @home.name)
+      @chatroom.update(id: @home.id)
       redirect_to dashboard_path, notice: "Congrats, you've created a home!"
     else
       render :new

@@ -45,5 +45,4 @@ class ChoresController < ApplicationController
   end
 end
 
-# change status as mark (conplete or not)
-# need a update?
+

@@ -8,6 +8,7 @@ class InvitationsController < ApplicationController
     else
       redirect_to(new_user_registration_path(invite_token:params[:home_invite_token])) and return
     end
+    raise
   end
 
   def update
