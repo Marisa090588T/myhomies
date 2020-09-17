@@ -1,12 +1,47 @@
+// Primary app colors
+$text-bright: #EBECFD;
+$text-dark: #687881;
+$text-medium: #B8C2C0;
+$global-background: #22343B;
+$card-background: #30444E;
+$grey: #96A7AF;
+$yellow: #FEC542;
+$green:#6ED3AA;
+$red: #FA5D65;
+$message-in: #DFE0E5;
+$message-out: #FFE3C0;
+//
+
 .navbar-lewagon {
-  justify-content: space-between;
-  background: #30444E;
+ justify-content: space-between;
+ background: #30444E;
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+ flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+ width: 40px;
+}
+
+.navbar {
+ list-style-type:none;
+}
+
+.dropdown-menu.top.show {
+  display: flex;
+  background-color: $grey;
+  flex-direction: column;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  right: 100%;
+  margin-right: 100px;
+  top: 100%;
+  margin-top: 11px;
+  left: -50%;
+  margin-left: -50px;
+
+
 }
