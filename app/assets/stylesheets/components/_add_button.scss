@@ -1,4 +1,18 @@
-.add-button {
+// Primary app colors
+$text-bright: #EBECFD;
+$text-dark: #687881;
+$text-medium: #B8C2C0;
+$global-background: #22343B;
+$card-background: #30444E;
+$grey: #96A7AF;
+$yellow: #FEC542;
+$green:#6ED3AA;
+$red: #FA5D65;
+$message-in: #DFE0E5;
+$message-out: #FFE3C0;
+//
+
+.button {
   overflow: hidden;
   background-color: #333;
   position: fixed;
@@ -6,7 +20,7 @@
   width: 100%;
 }
 
-.add-button a {
+.button a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -18,4 +32,24 @@
 
 a:hover{
   background-color: #4CAF50;
+}
+
+.add-button {
+  background-color: $grey;
+  width: 50px;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  background-color: $grey;
+  flex-direction: column;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
+
+
 }

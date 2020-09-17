@@ -14,12 +14,21 @@ Rails.application.routes.draw do
     resources :expenses, only: [:create, :new, :index, :show] do
       resources :expense_shares, only: :update
     end
-    resources :chores, only: [:create, :new, :index, :show] do
-      patch :done, on: :member
+    resources :chores, only: [:create, :new, :index, :show]
+
+    resources :expense_shares, only: [:show, :index] do
     end
-      resources :expense_shares, only: [:show, :index] do
-    end
+  end 
+
+  namespace :user do
+    resources :chores, only: :index
+    resources :expenses, only: :index
   end
+
+  resources :chores, only: [] do
+    patch :done, on: :member
+  end
+
   # resources :expense_share, only: [] do
   #   patch :check, on: :member
   # end
