@@ -1,0 +1,23 @@
+<h1>My bills</h1>
+<% @expense_shares.each do |expense_share| %>
+  <div class="card" style="width: 18rem;">
+    <table>
+      <tbody>
+          <tr><th>My Expenses:</th><td><%= link_to expense_share.expense.name, home_expense_share_path(@home, expense_share), class:"text-center" %></td></tr>
+          <tr><th>$ </th><td><%= expense_share.share_amount %></td><td>to pay</td></tr>
+          <tr><th>Due on:</th><td><%= expense_share.expense.due_on %></td></tr>
+          <tr>
+          <% if expense_share.paid %>
+              <th><%= "Paid" %></th>
+          <% else %>
+              <th><%= "Unpaid" %></th>
+          <% end %>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<div class="links">
+  <%= link_to 'Add a new bill', new_home_expense_path %>
+</div>
