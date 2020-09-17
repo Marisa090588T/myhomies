@@ -9,33 +9,50 @@ require 'faker'
 puts "Wiping data"
 User.destroy_all
 Home.destroy_all
+puts "Creating Home test home with test homie inside :)"
 
-2.times do
-  Home.create!(
+Home.create!(
     name: Faker::BossaNova.song,
-    address: Faker::Address.street_address
+    address: Faker::Address.street_address,
+    id: 1
   )
-end
-puts "Created #{Home.count} home(s)"
 
-5.times do
   User.create!(
     first_name: Faker::Artist.name,
     last_name: Faker::Creature::Animal.name,
     username: Faker::Games::Pokemon.name,
-    email: Faker::Internet.email,
+    email: user@user.com,
     password: 123456,
     home_id: 1
   )
-end
-5.times do
-  User.create!(
-    first_name: Faker::Artist.name,
-    last_name: Faker::Creature::Animal.name,
-    username: Faker::Games::Pokemon.name,
-    email: Faker::Internet.email,
-    password: 123456,
-    home_id: 2
-  )
-end
+
+
+# 2.times do
+#   Home.create!(
+#     name: Faker::BossaNova.song,
+#     address: Faker::Address.street_address
+#   )
+# end
+puts "Created #{Home.count} home(s)"
+
+# 5.times do
+#   User.create!(
+#     first_name: Faker::Artist.name,
+#     last_name: Faker::Creature::Animal.name,
+#     username: Faker::Games::Pokemon.name,
+#     email: Faker::Internet.email,
+#     password: 123456,
+#     home_id: 1
+#   )
+# end
+# 5.times do
+#   User.create!(
+#     first_name: Faker::Artist.name,
+#     last_name: Faker::Creature::Animal.name,
+#     username: Faker::Games::Pokemon.name,
+#     email: Faker::Internet.email,
+#     password: 123456,
+#     home_id: 2
+#   )
+# end
 puts "Created #{User.count} user(s)"
