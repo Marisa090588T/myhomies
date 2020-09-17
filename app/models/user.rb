@@ -5,6 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
   belongs_to :home, optional: true
   has_many :chores
+  has_many :expense_shares
   has_many :expenses, through: :expense_shares
   validates :first_name, presence: true
   validates :last_name, presence: true
