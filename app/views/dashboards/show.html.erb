@@ -1,19 +1,18 @@
-
 <% if @home %>
 
-   <h1><%= @home.name.capitalize %></h1>
-   <p>@ <%= @home.address %></p>
+  <h1><%= @home.name.capitalize %></h1>
+  <p>@ <%= @home.address %></p>
 
-   <h2>My Homies</h2>
-   <ul>
-     <% @homies.each do |homie| %>
-     <li><%= homie.first_name %> <%= homie.last_name %></li>
-     <% end %>
-   </ul>
+  <h2>My Homies</h2>
+  <ul>
+    <% @homies.each do |homie| %>
+    <li><%= homie.first_name %> <%= homie.last_name %></li>
+    <% end %>
+  </ul>
 
 <% else %>
- "No home yet :("
- <p><%= link_to "Add a home", new_home_path %></p>
+"No home yet :("
+<p><%= link_to "Add a home", new_home_path %></p>
 <% end %>
 <p> To invite new homie - send them this link </p>
 <%=new_invitation_url(@home.invite_token) %>
