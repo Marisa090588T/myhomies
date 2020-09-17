@@ -1,8 +1,9 @@
 class ExpensesController < ApplicationController
   def index
-    # @home = current_user.home
     @expenses = Expense.all
     @home = Home.find(params[:home_id])
+    @expense = Expense.find_by(user: current_user, home: @home)
+    @expense_share = ExpenseShare.find_by(user: current_user, expense: @expense)
   end
 
   def show
@@ -20,21 +21,20 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @home = Home.find(params[:home_id])
     @expense.user_id = current_user.id
-    # @expense.user_id = current_user
     @expense.home = current_user.home
-    @par_amount = @expense.amount / @expense.home.users.count
-    # if choose someone number = ([] << user ).count
+    @share_amount = @expense.amount / @home.users.count
+    # TODO: can choose homies = ([] << user ).count
 
     if @expense.save
-      @expense.home.users.each do |user| #hes many users
+      @expense.home.users.each do |user| 
         @expense.expense_shares.create!(
         expense_id: Expense.find(@expense.id),
         user_id: user.id,
         paid: false,
-        share_amount: @par_amount #no amount yet
+        share_amount: @share_amount 
         )
       end
-      redirect_to home_expense_path(@expense.home, @expense)
+      redirect_to home_expenses_path(@home, @expense)
     else
       render :new
     end

@@ -11,9 +11,24 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/add_button";
+
+// Primary app colors
+$text-bright: #EBECFD;
+$text-dark: #687881;
+$text-medium: #B8C2C0;
+$global-background: #22343B;
+$card-background: #30444E;
+$grey: #96A7AF;
+$yellow: #FEC542;
+$green:#6ED3AA;
+$red: #FA5D65;
+$message-in: #DFE0E5;
+$message-out: #FFE3C0;
+//
 
 body {
-  background-color: black;
+  background-color: $global-background;
 }
 
 .app {
@@ -22,17 +37,17 @@ body {
   height: 100vh;
   margin: 0 auto;
   flex-direction: column;
-  background-color: #222;
-  color: white;
+  background-color:$global-background;
+  color:$text-bright;
   @media (min-width: 600px) {
     flex-direction: row;
   }
   .app-menu {
-    background-color: #333;
+    background-color:$card-background;
     min-height: 50px;
   }
   .app-header {
-    background-color: #333;
+    background-color:$global-background;
     min-height: 50px;
   }
   .app-content {

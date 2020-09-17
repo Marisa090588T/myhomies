@@ -8,11 +8,11 @@
           <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
           <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
           <tr>
-          <%# <% if expense_shares.paid %>
-            <%# <th><%= "Paid" %> <%# </th>
-          <%# else %>
-            <%# <th><%= "Unpaid" %> <%# </th> %>
-          <%# end %>
+          <% if @expense_share.paid %>
+              <th><%= "Paid" %></th>
+          <% else %>
+              <th><%= "Unpaid" %></th>
+          <% end %>
           </tr>
       </tbody>
     </table>
