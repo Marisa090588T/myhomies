@@ -1,0 +1,21 @@
+<h1>My chores</h1>
+
+<% @chores.each do |chore| %>
+  <div class="card bg-dark" style="width: 18rem;">
+    <table>
+      <tbody>
+        <tr><th>Chores:</th><td><%= chore.name %></td></td></tr>
+        <tr><th>Description:</th><td><%= chore.description %></td></tr>
+        <tr><th>Assigned to:</th><td><%= chore.assignee %></td></tr>
+
+        <tr>
+        <%= render "chores/switch", chore: chore %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<div class="links">
+  <%= link_to 'Create new chore', new_home_chore_path(current_user.home) %>
+</div>

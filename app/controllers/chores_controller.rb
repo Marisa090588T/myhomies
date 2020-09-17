@@ -1,6 +1,6 @@
 class ChoresController < ApplicationController
   def index
-    @chores = Chore.all
+    @chores = Chore.order(:created_at)
     @home = Home.find(params[:home_id])
     @chore = Chore.find_by(assignee: current_user, home: @home)
   end
@@ -31,19 +31,17 @@ class ChoresController < ApplicationController
     @chore.home = @home
   end
 
+  def done
+    @chore = Chore.find(params[:id])
+    @chore.completed = !@chore.completed
+    @chore.save!
+    redirect_to home_chores_path(@chore.home) # TODO: should go back show page?
+  end
+
   private
 
   def chore_params
     params.require(:chore).permit(:name, :description, :assignee)
-  end
-
-  def complete
-    @home = Home.find(params[:home_id])
-    @chore = Chore.find(params[:id])
-    @home.chore = @home
-    @chore.completed = true
-    @chore.save
-    redirect_to dashboard_path # TODO: should go back show page?
   end
 end
 
