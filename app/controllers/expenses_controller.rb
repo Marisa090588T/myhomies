@@ -26,12 +26,12 @@ class ExpensesController < ApplicationController
     # TODO: can choose homies = ([] << user ).count
 
     if @expense.save
-      @expense.home.users.each do |user| 
+      @expense.home.users.each do |user|
         @expense.expense_shares.create!(
         expense_id: Expense.find(@expense.id),
         user_id: user.id,
         paid: false,
-        share_amount: @share_amount 
+        share_amount: @share_amount
         )
       end
       redirect_to home_expenses_path(@home, @expense)
