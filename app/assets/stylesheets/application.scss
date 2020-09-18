@@ -68,12 +68,37 @@ body {
   justify-content: space-between;
 }
 
-.home-info, .homies-info, .invite-homie, .homeless {
+.home-info, .homies-info, .expenses-list, .chores-list, .invite-homie, .homeless {
   padding: 12px;
   margin: 7px 0px;
   text-align: center;
   background-color: $grey;
   opacity: 0.6;
   border-radius: 4px;
+}
+
+.chore-show {
+  color: $text-bright;
+}
+
+.chores-list td {
+  width: 200px;
+  text-align: left;
+}
+
+.chores-list th {
+  width: 200px;
+  text-align: left;
+}
+
+
+.expenses-list td {
+  width: 200px;
+  text-align: left;
+}
+
+.expenses-list th {
+  width: 200px;
+  text-align: left;
 }
 
