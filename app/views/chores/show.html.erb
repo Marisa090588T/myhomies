@@ -14,6 +14,11 @@
           <th><%= "Not done yet :(" %></th>
         <% end %>
         </tr>
+          <tr><% if current_user == @chore.assignee %>
+            <%= render "switch", chore: @chore %>
+          <% end %>
+          </tr>
+        </tr>
       </tbody>
     </table>
   </div>

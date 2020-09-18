@@ -1,8 +1,9 @@
 class ChoresController < ApplicationController
   def index
     @chores = Chore.order(:created_at)
-    @home = Home.find(params[:home_id])
+    @home = Home.find {|home| current_user.home == home }
     @chore = Chore.find_by(assignee: current_user, home: @home)
+
   end
 
   def new
@@ -27,7 +28,7 @@ class ChoresController < ApplicationController
       render :new
     end
   end
-    
+
   def show
     @home = Home.find(params[:home_id])
     @chore = Chore.find(params[:id])
@@ -35,10 +36,12 @@ class ChoresController < ApplicationController
   end
 
   def done
+    @home = Home.find {|home| current_user.home == home }
     @chore = Chore.find(params[:id])
+    @chore.home = @home
     @chore.completed = !@chore.completed
     @chore.save!
-    redirect_to home_chores_path(@chore.home) # TODO: should go back show page?
+    redirect_to home_chores_path(@chore) # TODO: should go back show page?
   end
 
   private
