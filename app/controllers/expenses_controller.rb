@@ -40,6 +40,13 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def paid
+    @expenses = Expense.find(params[:id])
+    @expense.paid = !@expense.paid
+    @expense.paid!
+    redirect_to home_expenses_path(@expense.home)
+  end
+
   private
 
   def expense_params

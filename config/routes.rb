@@ -29,9 +29,9 @@ Rails.application.routes.draw do
     patch :done, on: :member
   end
 
-  # resources :expense_share, only: [] do
-  #   patch :check, on: :member
-  # end
+  resources :expenses, only: [] do
+    patch :paid, on: :member
+  end
 
   if Rails.env.development?
     get 'kitchensink', to: 'pages#kitchensink'
