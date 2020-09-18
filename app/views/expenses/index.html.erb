@@ -1,7 +1,7 @@
 <h1>All expenses</h1>
 
 <% @expenses.each do |expense| %>
-  <div class="card" style="width: 18rem;">
+  <div class="card bg-dark" style="width: 18rem;">
     <table>
       <tbody>
           <tr><th>Bill:</th><td><%= link_to expense.name, home_expense_path(@home, expense), class:"text-center" %></td></tr>
