@@ -1,22 +1,55 @@
-<% if @home %>
 
-  <h1><%= @home.name.capitalize %></h1>
-  <p>@ <%= @home.address %></p>
 
-<h2><%= @home.name.capitalize %>'s Homies</h2>
 
-  <ul>
-    <% @homies.each do |homie| %>
 
-      <li><%= homie.first_name %> <%= homie.last_name %></li>
+
+
+
+
+
+<div class="container">
+
+  <div class="home-info">
+    <% if @home %>
+      <h1><%= @home.name.capitalize %></h1>
+      <p>@ <%= @home.address %></p>
+  </div>
+
+  <div class="homies-info">
+
+
+    <h2><%= @home.name.capitalize %>'s Homies</h2>
+
+        <% @homies.each do |homie| %>
+
+          <div class="avatar-container">
+            <div class="row">
+                  <div class="profile-header-container">
+                  <div class="profile-header-img">
+                          <img class="img-circle" src="https://pbs.twimg.com/media/D6PkrcbUUAANQZe.jpg"/>
+                          <!-- badge -->
+                          <div class="rank-label-container">
+                              <span class="label label-default rank-label"><%= homie.first_name %> <%= homie.last_name %></span>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+          </div>
+        <% end %>
+
+  </div>
+
+  <div class="invite-homie">
+    <p> To invite new homie - send them this link </p>
+    <%=new_invitation_url(@home.invite_token) %>
+    <p><%= link_to 'refresh invite link', home_invitations_path(@home), method: :patch, remote: true %></p>
+  </div>
+  <% else %>
+
+  <div class="homeless">
+      "No home yet :("
+      <p><%= link_to "Add a home", new_home_path %></p>
     <% end %>
-  </ul>
+  </div>
 
-<p> To invite new homie - send them this link </p>
-<%=new_invitation_url(@home.invite_token) %>
-<%= link_to 'refresh invite link', home_invitations_path(@home), method: :patch, remote: true %>
-
-<% else %>
-  "No home yet :("
-  <p><%= link_to "Add a home", new_home_path %></p>
-<% end %>
+</div>

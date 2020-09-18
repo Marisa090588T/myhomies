@@ -13,22 +13,21 @@
      <li class="nav-item dropdown">
         <%= image_tag "yoda2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu top" aria-labelledby="navbarDropdown">
-        <%= link_to "Chatroom", chatroom_path(@home), class: "nav-link" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <%= link_to "Chatroom", chatroom_path(@home), class: "dropdown-item-top"  %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item-top" %>
 
         <% elsif user_signed_in? %>
 
           <li class="nav-item dropdown">
           <%= image_tag "yoda2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu top" aria-labelledby="navbarDropdown">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item-top" %>
 
         <% else %>
           <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "dropdown-item-top"  %>
         </li>
     <% end %>
 
    </div>
-
 </div>

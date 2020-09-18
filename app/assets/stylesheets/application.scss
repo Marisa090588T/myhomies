@@ -12,6 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "components/add_button";
+@import "pages/show";
 
 // Primary app colors
 $text-bright: #EBECFD;
@@ -29,6 +30,7 @@ $message-out: #FFE3C0;
 
 body {
   background-color: $global-background;
+  word-wrap: break-word;
 }
 
 .app {
@@ -38,7 +40,7 @@ body {
   margin: 0 auto;
   flex-direction: column;
   background-color:$global-background;
-  color:$text-bright;
+  color: white;
   @media (min-width: 600px) {
     flex-direction: row;
   }
@@ -59,4 +61,19 @@ body {
   }
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.home-info, .homies-info, .invite-homie, .homeless {
+  padding: 12px;
+  margin: 7px 0px;
+  text-align: center;
+  background-color: $grey;
+  opacity: 0.6;
+  border-radius: 4px;
+}
 

@@ -33,15 +33,29 @@ $message-out: #FFE3C0;
   display: flex;
   background-color: $grey;
   flex-direction: column;
-  height: 100px;
-  width: 100px;
+  height: auto;
+  min-width: auto;
   position: absolute;
   right: 100%;
-  margin-right: 100px;
   top: 100%;
   margin-top: 11px;
-  left: -50%;
-  margin-left: -50px;
-
-
+  left: -34%;
+  border-radius: 4px;
+  padding: 10px;
+  opacity: 0.8;
 }
+
+.dropdown-menu-top.show li {
+  margin: auto;
+  width: auto;
+}
+
+.dropdown-item-top {
+  margin: auto;
+  width: auto;
+}
+
+a.dropdown-item-top {
+  color: $text-bright;
+}
+
