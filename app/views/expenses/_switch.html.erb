@@ -1,0 +1,3 @@
+<%= link_to paid_expense_path(expense), method: :patch, type: "button", class: "btn btn-lg btn-toggle", 'data-toggle': "button", 'aria-pressed': expense.paid?, autocomplete: "off" do %>
+  <div class="handle"></div>
+<% end %>

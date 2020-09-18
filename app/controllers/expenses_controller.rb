@@ -40,6 +40,12 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def paid
+    @expense = Expense.find(params[:id])
+    @expense.paid = !@expense.paid
+    @expense.save!
+  end
+
   private
 
   def expense_params

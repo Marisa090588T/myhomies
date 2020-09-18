@@ -1,19 +1,16 @@
-<h1>My bills</h1>
+<h1>My Expenses</h1>
 
 <% @expenses.each do |expense| %>
   <div class="card" style="width: 18rem;">
     <table>
       <tbody>
-          <tr><th>Bill:</th><td><%= expense.name %></td></tr>
+          <tr><th>Expense:</th><td><%= expense.name %></td></tr>
           <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
           <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
+
           <tr>
-          <% if expense.paid_by?(current_user) %>
-              <th><%= "Paid" %></th>
-          <% else %>
-              <th><%= "Unpaid" %></th>
-          <% end %>
-          </tr>
+          <%= render "expenses/switch", expense: expense %>
+        </tr>
       </tbody>
     </table>
   </div>
