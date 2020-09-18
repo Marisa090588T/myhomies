@@ -1,38 +1,23 @@
-# TODO: don't use this page
+<%# # TODO: don't use this page %>
 
-<h1>Chore detail</h1>
+<h1>TODO: <%= @chore.name %> </h1>
 
-<div class="card" style="width: 18rem;">
-  <table>
-    <tbody>
-      <tr><th>Title:</th><td><%= @chore.name %></td></tr>
-      <tr><th>Description:</th><td><%= @chore.description %></td></tr>
-      <tr><th>Assigned To:</th><td><%= @chore.assignee %></td></tr>
-      
-      <tr>
-      <th></th>
-      <% if @chore.completed? %>
-
-        <th> <%= "Done" %></th>
-      <% else %>
-        <th><%= "Not yet" %></th>
-      <% end %>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-
-<div id="respond-request">
-   <%= link_to 'Accept', booking_path(booking, booking: {status: "Booked"}), method: :patch, data: { confirm: 'Are you sure?' } %> |
-   <% if booking.status != "Declined"%>
-   <%= link_to 'Decline', booking_path(booking, booking: {status: "Declined"}), method: :patch, data: { confirm: 'Are you sure?' } %>
-   <% end %>
-</div>
-
-
+  <div class="card" style="width: 18rem;">
+    <table>
+      <tbody>
+        <tr><th>Description:</th><td><%= @chore.description %></td></tr>
+        <tr><th>Assigned to:</th><td><%= @chore.assignee.first_name %></td></tr>
+        <tr>
+        <% if @chore.completed? %>
+          <th> <%= "All done!" %></th>
+        <% else %>
+          <th><%= "Not done yet :(" %></th>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 <div class="links">
-    <%= link_to " Back ", home_chores_path %>
+    <%= link_to "Back to #{@home.name}'s TODO list", home_chores_path %>
 </div>

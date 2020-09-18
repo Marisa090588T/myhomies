@@ -1,20 +1,27 @@
-<h1>All chores</h1>
+<h1><%= @home.name %>'s TODO list</h1>
 
 <% @chores.each do |chore| %>
   <div class="card bg-dark" style="width: 18rem;">
     <table>
       <tbody>
-          <tr><th>Chores:</th><td><%= link_to chore.name, home_chore_path(@home, @chore), class:"text-center" %></td></td></tr>
+          <tr><th>TODO:</th><td><%= link_to chore.name, home_chore_path(@home, chore), class:"text-center" %></td></td></tr>
           <tr><th>Description:</th><td><%= chore.description %></td></tr>
           <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
           <tr>
-          <%= render "switch", chore: chore %>
+            <% if @chore.completed? %>
+              <th> <%= "All done!" %></th>
+            <% else %>
+              <th><%= "Not done yet :(" %></th>
+            <% end %>
           </tr>
+          <%# <tr>
+          <%= render "switch", chore: chore %>
+          <%# </tr>  %>
       </tbody>
     </table>
   </div>
 <% end %>
 
 <div class="links">
-  <%= link_to 'Creare new chore', new_home_chore_path %>
+  <%= link_to 'Create new TODO item', new_home_chore_path %>
 </div>
