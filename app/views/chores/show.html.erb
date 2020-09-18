@@ -2,7 +2,7 @@
 
 <h1>TODO: <%= @chore.name %> </h1>
 
-  <div class="card" style="width: 18rem;">
+  <div class="chore-show" style="width: 18rem;">
     <table>
       <tbody>
         <tr><th>Description:</th><td><%= @chore.description %></td></tr>
@@ -13,6 +13,11 @@
         <% else %>
           <th><%= "Not done yet :(" %></th>
         <% end %>
+        </tr>
+          <tr><% if current_user == @chore.assignee %>
+            <%= render "switch", chore: @chore %>
+          <% end %>
+          </tr>
         </tr>
       </tbody>
     </table>

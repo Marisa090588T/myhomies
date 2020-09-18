@@ -7,16 +7,13 @@
           <tr><th>TODO:</th><td><%= link_to chore.name, home_chore_path(@home, chore), class:"text-center" %></td></td></tr>
           <tr><th>Description:</th><td><%= chore.description %></td></tr>
           <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
-          <tr>
-            <% if @chore.completed? %>
-              <th> <%= "All done!" %></th>
-            <% else %>
-              <th><%= "Not done yet :(" %></th>
-            <% end %>
-          </tr>
-          <%# <tr>
-          <%= render "switch", chore: chore %>
-          <%# </tr>  %>
+        <tr>
+        <% if chore.completed %>
+          <th> <%= "All done!" %></th>
+        <% else %>
+          <th><%= "Not done yet :(" %></th>
+        <% end %>
+        </tr>
       </tbody>
     </table>
   </div>
