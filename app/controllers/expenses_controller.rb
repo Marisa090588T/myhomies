@@ -41,10 +41,9 @@ class ExpensesController < ApplicationController
   end
 
   def paid
-    @expenses = Expense.find(params[:id])
+    @expense = Expense.find(params[:id])
     @expense.paid = !@expense.paid
-    @expense.paid!
-    redirect_to home_expenses_path(@expense.home)
+    @expense.save!
   end
 
   private
