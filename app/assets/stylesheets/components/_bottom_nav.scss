@@ -35,7 +35,6 @@ a:hover{
 }
 
 .add-button {
-  display: flex;
   background-color: $grey;
   width: 50px;
   border-radius: 4px;
@@ -72,3 +71,18 @@ a:hover{
 .dropdown-menu.show a {
   color: $text-bright;
 }
+
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+.navbar-bottom {
+  display: flex;
+  // flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+
+
+
