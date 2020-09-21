@@ -1,26 +1,50 @@
 .btn-add-chores {
-  background-color: $yellow;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  position: relative;
+  padding: 20px;
 }
 
 .fa-plus {
-  color: $grey;
-  position: absolute;
-  top: 20%;
-  left: 22%;
+  color: $yellow;
 }
 
 .btn-chores {
-  padding:20px;
-  background-color:white;
-  width: 40%;
+  font-weight: bold;
+  padding:10px;
+  width: 140px;
+  margin: 10px;
   border-radius: 90px;
+  background-color:white;
   text-align: center;
+  a:link {
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: $green;
+    text-decoration: none;
+  }
 }
 
 .chores-links {
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chores-card {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-size: 18px;
+  li {
+    list-style: none;
+  }
+}
+
+.todo {
+  font-size: 22px;
+}
+
+.assignee-name {
+  color: $yellow;
 }

@@ -1,19 +1,20 @@
 <h1 class="text-center"><%= @user.first_name %>'s<br> TODO list</h1>
 
 <div class="chores-links">
+  <div class="links btn-chores">
+    <%= link_to 'All TODO list', home_chores_path(current_user.home) %>
+  </div>
+
   <div class="links btn-add-chores">
     <%= link_to new_home_chore_path(current_user.home) do %>
     <i class="fas fa-plus fa-2x "></i>
     <% end %>
   </div>
 
-  <div class="links btn-chores">
-    <%= link_to 'All TODO list', home_chores_path(current_user.home) %>
-  </div>
 </div>
 
 <% @chores.each do |chore| %>
-  <div class="card bg-dark" style="width: 18rem;">
+  <div class="card bg-dark chores-card" style="width: 30rem;">
     <table>
       <tbody>
         <tr><th>Chores:</th><td><%= chore.name %></td></td></tr>
