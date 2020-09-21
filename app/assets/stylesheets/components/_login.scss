@@ -1,0 +1,32 @@
+$text-bright: #EBECFD;
+$text-dark: #687881;
+$text-medium: #B8C2C0;
+$global-background: #22343B;
+$card-background: #30444E;
+$grey: #96A7AF;
+$yellow: #FEC542;
+$green:#6ED3AA;
+$red: #FA5D65;
+$message-in: #DFE0E5;
+$message-out: #FFE3C0;
+
+.log-in {
+  margin: auto;  
+}
+
+h2 {
+  color: $text-bright;
+  margin: auto;
+}
+
+.optional {
+  border-radius: 10px;
+}
+
+.btn-primary {
+  background: $green;
+}
+
+.other-account-links {
+  text-align: center;
+}

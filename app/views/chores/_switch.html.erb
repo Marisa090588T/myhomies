@@ -1,3 +1,4 @@
-<%= link_to done_chore_path(chore), method: :patch, type: "button", class: "btn btn-md btn-toggle", 'data-toggle': "button", 'aria-pressed': chore.completed?, autocomplete: "off" do %>
+<%= link_to done_chore_path(chore), method: :patch, type: "button", class: "btn btn-md btn-done", 'data-toggle': "button", 'aria-pressed': chore.completed?, autocomplete: "off" do %>
+  Mark as done？
   <div class="handle"></div>
 <% end %>

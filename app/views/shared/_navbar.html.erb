@@ -1,15 +1,14 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to dashboard_path, class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
-    <% end %>
+
 
   <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button> %>
 
-
-
     <% if user_signed_in? && current_user.home  %>
+      <%= link_to dashboard_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+      <div class="avatar img">
      <li class="nav-item dropdown">
         <%= image_tag "yoda2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu top" aria-labelledby="navbarDropdown">
@@ -19,6 +18,10 @@
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item-top" %>
 
         <% elsif user_signed_in? %>
+
+          <%= link_to dashboard_path, class: "navbar-brand" do %>
+          <%= image_tag "logo.png" %>
+          <% end %>
 
           <li class="nav-item dropdown">
           <%= image_tag "yoda2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -30,6 +33,6 @@
           <%= link_to "Login", new_user_session_path, class: "dropdown-item-top"  %>
         </li>
     <% end %>
-
+    </div>
    </div>
-</div>
+

@@ -1,0 +1,63 @@
+<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+	<div class="bottom-nav-container">
+
+		<div class="">
+			<ul class="nav navbar-bottom">
+				<li>
+					<a href= <%= dashboard_path %> >
+						<span class="small-nav" data-placement="right" title="Home">
+							<span class="glyphicon glyphicon-home"></span>
+						</span>
+					</a>
+				</li>
+
+				<li>
+					<a href= <%= home_chores_path(@home) %> >
+						<span class="small-nav" data-placement="right" title="TODO">
+							<span class="glyphicon glyphicon-list-alt"></span>
+						</span>
+					</a>
+				</li>
+
+        <li>
+					<a href= <%= home_expenses_path(@home) %> >
+						<span class="small-nav" data-placement="right" title="TODO">
+							<span class="glyphicon glyphicon-usd"></span>
+						</span>
+					</a>
+				</li>
+
+				<li>
+					<a href= <%= chatroom_path(@home) %> >
+						<span class="small-nav" data-placement="right" title="Chatroom">
+							<span class="glyphicon glyphicon-comment"></span>
+						</span>
+					</a>
+				</li>
+
+
+
+          <div class="btn-group dropup">
+            <button class="add-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-plus"></span>
+            </button>
+
+            <div class="dropdown-menu">
+              <ul style="list-style: none">
+                <li><%= link_to "Add Expense", new_home_expense_path(@home) %></li>
+                <li><%= link_to "Add TODO", new_home_chore_path(@home) %></li>
+              </ul>
+            </div>
+          </div>
+
+
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

@@ -11,7 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/add_button";
+@import "components/bottom_nav";
 @import "pages/show";
 
 // Primary app colors
@@ -36,7 +36,7 @@ body {
 .app {
   display: flex;
   max-width: 900px;
-  height: 100vh;
+  // height: 100vh;
   margin: 0 auto;
   flex-direction: column;
   background-color:$global-background;
@@ -51,8 +51,11 @@ body {
     justify-content: center;
   }
   .app-header {
+    display: flex;
     background-color:$global-background;
-    min-height: 50px;
+    max-height: 60px;
+    justify-content: space-between;
+    padding-right: 50px;
   }
   .app-content {
     flex: 1;
@@ -90,7 +93,6 @@ body {
   width: 200px;
   text-align: left;
 }
-
 
 .expenses-list td {
   width: 200px;
