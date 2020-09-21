@@ -1,9 +1,7 @@
 class ChoresController < ApplicationController
   def index
-    @chores = Chore.order(:created_at)
     @home = Home.find {|home| current_user.home == home }
-    @chore = Chore.find_by(assignee: current_user, home: @home)
-
+    @chores = @home.chores.all.order(:created_at)
   end
 
   def new

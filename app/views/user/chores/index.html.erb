@@ -1,4 +1,13 @@
-<h1>My chores</h1>
+<h1><%= @user.first_name %>'s TODO list</h1>
+
+<div class="links">
+  <%= link_to new_home_chore_path(current_user.home) do %>
+  <i class="fas fa-plus"></i> Add TODO list
+  <% end %>
+</div>
+<div class="links">
+  <%= link_to 'See All TODO list', home_chores_path(current_user.home) %>
+</div>
 
 <% @chores.each do |chore| %>
   <div class="card bg-dark" style="width: 18rem;">
@@ -6,8 +15,14 @@
       <tbody>
         <tr><th>Chores:</th><td><%= chore.name %></td></td></tr>
         <tr><th>Description:</th><td><%= chore.description %></td></tr>
-        <tr><th>Assigned to:</th><td><%= chore.assignee %></td></tr>
-
+        <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
+        <tr>
+        <% if chore.completed %>
+          <th> <%= "All done!" %></th>
+        <% else %>
+          <th><%= "Not done yet :(" %></th>
+        <% end %>
+        </tr>
         <tr>
         <%= render "chores/switch", chore: chore %>
         </tr>
@@ -16,6 +31,3 @@
   </div>
 <% end %>
 
-<div class="links">
-  <%= link_to 'Create new chore', new_home_chore_path(current_user.home) %>
-</div>

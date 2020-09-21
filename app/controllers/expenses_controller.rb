@@ -1,7 +1,9 @@
 class ExpensesController < ApplicationController
   def index
-    @expenses = Expense.all
-    @home = Home.find(params[:home_id])
+    @home = Home.find {|home| current_user.home == home }
+    @expenses = @home.expenses.all.order(:created_at)
+    # @expenses = Expense.all
+    # @home = Home.find(params[:home_id])
     @expense = Expense.find_by(user: current_user, home: @home)
     @expense_share = ExpenseShare.find_by(user: current_user, expense: @expense)
   end
