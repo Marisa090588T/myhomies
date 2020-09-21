@@ -2,11 +2,6 @@
 
 
 
-
-
-
-
-
 <div class="container">
 
   <div class="home-info">
@@ -39,52 +34,8 @@
 
   </div>
 
-    <div class="expenses-list">
-    <h2><%= @home.name %>'s Expenses </h2>
-      <% @home.expenses.each do |expense| %>
 
-        <table>
-          <tbody>
-              <tr><th>Expense:</th><td><%= link_to expense.name, home_expense_path(@home, expense) %></td></tr>
-              <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
-              <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
-              <tr>
-              <% if expense.paid %>
-                  <th><%= "Paid" %></th>
-              <% else %>
-                  <th><%= "Unpaid" %></th>
-              <% end %>
-              </tr>
-          </tbody>
-        </table>
 
-  <% end %>
-
-  </div>
-
-  <div class="chores-list">
-  <h2><%= @home.name %>'s TODO list</h2>
-    <% @home.chores.each do |chore| %>
-
-      <table>
-        <tbody>
-            <tr><th>TODO:</th><td><%= link_to chore.name, home_chore_path(@home, chore) %></td></td></tr>
-            <tr><th>Description:</th><td><%= chore.description %></td></tr>
-            <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
-            <tr>
-              <% if chore.completed %>
-                <th> <%= "All done!" %></th>
-              <% else %>
-                <th><%= "Not done yet :(" %></th>
-              <% end %>
-            </tr>
-
-          </tbody>
-        </table>
-
-    <% end %>
-
-  </div>
 
   <div class="invite-homie">
     <p> To invite new homie - send them this link </p>
@@ -116,4 +67,87 @@
     <% end %>
   </div>
 
+    <%# Expenses %>
+  <div class="card-container">
+    <div class="card">
+
+    <div class="card-content">
+      <h4><%= @home.name %>'s Expenses </h4>
+    </div>
+
+    <div class="card-footer">
+      <% @home.expenses.each do |expense| %>
+
+        <table>
+          <tbody>
+              <tr><th>Expense:</th><td><%= link_to expense.name, home_expense_path(@home, expense) %></td></tr>
+              <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
+              <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
+              <tr>
+              <% if expense.paid %>
+                  <th><%= "Paid" %></th>
+              <% else %>
+                  <th><%= "Unpaid" %></th>
+              <% end %>
+              </tr>
+            </tbody>
+          </table>
+
+      <% end %>
+    </div>
+  </div>
+
+  <%# to do list %>
+  <div class="card-container">
+  <div class="card">
+
+    <div class="card-content">
+      <h4><%= @home.name %>'s TODO list</h4>
+
+    </div>
+
+
+    <div class="card-footer">
+        <% @home.chores.each do |chore| %>
+
+        <table>
+          <tbody>
+              <tr><th>TODO:</th><td><%= link_to chore.name, home_chore_path(@home, chore) %></td></td></tr>
+              <tr><th>Description:</th><td><%= chore.description %></td></tr>
+              <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
+              <tr>
+                <% if chore.completed %>
+                  <th> <%= "All done!" %></th>
+                <% else %>
+                  <th><%= "Not done yet :(" %></th>
+                <% end %>
+              </tr>
+
+          </tbody>
+        </table>
+
+      <% end %>
+    </div>
+  </div>
+
+  <%# Empty Card to copy %>
+  <div class="card-container">
+  <div class="card">
+
+    <div class="card-content">
+      <h4><%= @home.name %>'s Empty Card to copy</h4>
+
+    </div>
+
+
+    <div class="card-footer">
+
+
+    </div>
+  </div>
+
+
 </div>
+
+
+

@@ -1,3 +1,15 @@
+// Primary app colors
+$text-bright: #EBECFD;
+$text-dark: #687881;
+$text-medium: #B8C2C0;
+$global-background: #22343B;
+$card-background: #30444E;
+$grey: #96A7AF;
+$yellow: #FEC542;
+$green:#6ED3AA;
+$red: #FA5D65;
+$message-in: #DFE0E5;
+$message-out: #FFE3C0;
 body, html {
     height: 100%;
     background-repeat: no-repeat;
@@ -40,4 +52,56 @@ body, html {
   display: flex;
   height: auto;
   justify-content: center;
+}
+
+
+/// new Dashboard card
+* {
+  box-sizing: border-box;
+}
+
+.card-container {
+  display: flex;
+
+  .card {
+    margin: 20px;
+    border-radius: 10px;
+    background-color: $card-background;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+
+    .card-count-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 200px;
+      padding: 20px 0px;
+    }
+    .card-content {
+      padding: 20px;
+      padding-top: 0px;
+
+      >h2 {
+        margin-top: 0px;
+        text-align: center;
+      }
+    }
+
+    .card-footer {
+      padding: 20px;
+      color: $text-medium;
+    }
+
+    &:nth-child(1) {
+
+      .card-count,
+      .card-footer {
+        background-image: linear-gradient(90deg, $card-background, $global-background);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
 }
