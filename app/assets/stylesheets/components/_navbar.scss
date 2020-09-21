@@ -12,22 +12,32 @@ $message-in: #DFE0E5;
 $message-out: #FFE3C0;
 //
 
-.navbar-lewagon {
- justify-content: space-between;
- background: #30444E;
-}
+// .navbar-lewagon {
+//  justify-content: space-between;
+//  background: #30444E;
+// }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-collapse {
  flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
- width: 40px;
+
+
+.navbar-brand img {
+  width: 60px;
 }
 
-.navbar {
- list-style-type:none;
+.nav-item.dropdown {
+  list-style-type:none;
+  padding: 15px 15px;
+
 }
+
+// .nav-item.dropdown img {
+  // width: 40px;
+  // height: 50px;
+  // padding: 15px 15px
+// }
 
 .dropdown-menu.top.show {
   display: flex;
@@ -59,3 +69,6 @@ a.dropdown-item-top {
   color: $text-bright;
 }
 
+.avatar.dropdown-toggle {
+  width: 60px;
+}
