@@ -1,29 +1,42 @@
-<h1><%= @home.name %>'s TODO list</h1>
+<h1 class="text-center"><%= @home.name %>'s<br> TODO list</h1>
 
-<div class="links">
-  <%= link_to new_home_chore_path(current_user.home) do %>
-  <i class="fas fa-plus"></i> Add TODO list
-  <% end %>
-</div>
-<div class="links">
-  <%= link_to 'See your TODO list', user_chores_path %>
+<div class="chores-links">
+  <div class="links btn-add-chores">
+    <%= link_to new_home_chore_path(current_user.home) do %>
+    <i class="fas fa-plus fa-2x "></i>
+    <% end %>
+  </div>
+
+  <div class="links btn-chores">
+    <%= link_to 'My TODO list', user_chores_path %>
+  </div>
 </div>
 
 <% @chores.each do |chore| %>
-  <div class="card bg-dark" style="width: 18rem;">
+  <div class="card bg-dark chores-card" style="width: 18rem;">
     <table>
       <tbody>
           <tr><th>TODO:</th><td><%= chore.name %></td></td></tr>
           <%# <%= link_to chore.name, home_chore_path(@home, chore) %>
           <tr><th>Description:</th><td><%= chore.description %></td></tr>
           <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
-        <tr>
-        <% if chore.completed %>
-          <th> <%= "All done!" %></th>
-        <% else %>
-          <th><%= "Not done yet :(" %></th>
-        <% end %>
-        </tr>
+          <tr>
+          <% if chore.completed %>
+            <th>
+              <div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: flex;">
+                <span class="swal2-success-line-tip"></span>
+                <span class="swal2-success-line-long"></span>
+              <div class="swal2-success-ring"></div> 
+              </div>
+              <%= "All done!" %>
+            </th>
+          <% else %>
+            <th>
+            　<div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
+            <%= "Not done yet :(" %>
+            </th>
+          <% end %>
+          </tr>
       </tbody>
     </table>
   </div>
