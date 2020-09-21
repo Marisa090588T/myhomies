@@ -1,13 +1,16 @@
-<h1>Create new TODO item</h1>
+<div class="chores container">
+  <h1>Create new TODO item</h1>
 
-<div>
-  <%= simple_form_for [@home, @chore] do |f|%>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :assignee, as: :check_boxes, collection: @homies, input_html: { multiple: true }, include_hidden: false %>    <%= f.button :submit, value: 'Add chore', class: 'btn btn-primary' %>
-  <% end %>
-</div>
+  <div>
+    <%= simple_form_for [@home, @chore] do |f|%>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :assignee, as: :check_boxes, collection: @homies, input_html: { multiple: true }, include_hidden: false %>    <%= f.button :submit, value: 'Add chore', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
 
-<div class="links">
-  <%= link_to 'cancel', dashboard_path %>
-</div>
+  <%# <div class="links"> %>
+    <%#= link_to 'cancel', dashboard_path %>
+    <%#= link_to 'See all TODOs', home_chores_path %>
+  <%# </div> %>
+<%# </div> %>

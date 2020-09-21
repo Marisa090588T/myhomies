@@ -4,8 +4,6 @@
     <span class="navbar-toggler-icon"></span>
   </button> %>
 
-
-
     <% if user_signed_in? && current_user.home  %>
       <%= link_to dashboard_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png" %>
