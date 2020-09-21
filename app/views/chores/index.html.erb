@@ -1,10 +1,20 @@
 <h1><%= @home.name %>'s TODO list</h1>
 
+<div class="links">
+  <%= link_to new_home_chore_path(current_user.home) do %>
+  <i class="fas fa-plus"></i> Add TODO list
+  <% end %>
+</div>
+<div class="links">
+  <%= link_to 'See your TODO list', user_chores_path %>
+</div>
+
 <% @chores.each do |chore| %>
   <div class="card bg-dark" style="width: 18rem;">
     <table>
       <tbody>
-          <tr><th>TODO:</th><td><%= link_to chore.name, home_chore_path(@home, chore), class:"text-center" %></td></td></tr>
+          <tr><th>TODO:</th><td><%= chore.name %></td></td></tr>
+          <%# <%= link_to chore.name, home_chore_path(@home, chore) %>
           <tr><th>Description:</th><td><%= chore.description %></td></tr>
           <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
         <tr>
@@ -18,7 +28,3 @@
     </table>
   </div>
 <% end %>
-
-<div class="links">
-  <%= link_to 'Create new TODO item', new_home_chore_path %>
-</div>
