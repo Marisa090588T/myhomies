@@ -30,13 +30,11 @@
       <%= render 'shared/flashes' %>
       <%= yield %>
 
-
     <% if user_signed_in? && current_user.home %>
     <div class="app-menu">
       <%= render 'shared/bottom_nav' %>
     </div>
     <% end %>
-
 
   </div>
 
