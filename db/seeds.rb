@@ -128,8 +128,8 @@ User.first.update(
 
 puts "Added #{User.first.username} to #{Home.first.name}!"
 
-Chatroom.create(
-  id: Home.first.id,
+Chatroom.create!(
+  home: Home.first,
   name: Home.first.name
 )
 
