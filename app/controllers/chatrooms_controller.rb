@@ -1,7 +1,8 @@
 class ChatroomsController < ApplicationController
-  def show
-    @home = Home.find(params[:id])
-    @chatroom = Chatroom.find(@home.id)
-    @message = Message.new
-  end
+
+ def show
+   @home = current_user.home
+   @chatroom = Chatroom.find(params[:id])
+   @message = Message.new
+ end
 end

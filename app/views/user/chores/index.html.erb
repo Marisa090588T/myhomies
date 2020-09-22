@@ -1,47 +1,36 @@
-<h1 class="text-center"><%= @user.first_name %>'s<br> TODO list</h1>
+<div class="my-chores container">
+  <h1 class="text-center"><%= @user.first_name %>'s<br> TODO list</h1>
 
-<div class="chores-links">
-  <div class="links btn-chores">
-    <%= link_to 'All TODO list', home_chores_path(current_user.home) %>
+  <div class="chores-links">
+    <div class="links btn-chores">
+      <%= link_to 'All TODO list', home_chores_path(current_user.home) %>
+    </div>
+
+    <div class="links btn-add-chores">
+      <%= link_to new_home_chore_path(current_user.home), class:"action-button" do %>
+      <i class="fas fa-plus fa-2x "></i>
+      <% end %>
+    </div>
+
   </div>
 
-  <div class="links btn-add-chores">
-    <%= link_to new_home_chore_path(current_user.home) do %>
-    <i class="fas fa-plus fa-2x "></i>
-    <% end %>
-  </div>
-
+  <% @chores.each do |chore| %>
+    <div class="card bg-dark chores-card" style="width: 30rem;">
+      <% if chore.completed %>
+        <div class="swal2-icon swal2-success swal2-animate-success-icon style="display: flex;">
+          <span class="swal2-success-line-tip"></span>
+          <span class="swal2-success-line-long"></span>
+          <div class="swal2-success-ring"></div>
+        </div>
+      <% else %>
+        <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
+      <% end %>
+      <ul>
+        <li class="todo"><strong><%= chore.name %></strong></li>
+        <li>Assigned to: <strong class="assignee-name"><%= chore.assignee.first_name %></strong></li>
+        <li>Description: <%= chore.description %></li>
+        <li class="btn-mark"><%= render "chores/switch", chore: chore %></li>
+      </ul>
+    </div>
+  <% end %>
 </div>
-
-<% @chores.each do |chore| %>
-  <div class="card bg-dark chores-card" style="width: 30rem;">
-    <table>
-      <tbody>
-        <tr><th>Chores:</th><td><%= chore.name %></td></td></tr>
-        <tr><th>Description:</th><td><%= chore.description %></td></tr>
-        <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
-        <tr>
-        <% if chore.completed %>
-          <th>
-            <div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: flex;">
-              <span class="swal2-success-line-tip"></span>
-              <span class="swal2-success-line-long"></span>
-            <div class="swal2-success-ring"></div> 
-            </div>
-            <%= "All done!" %>
-          </th>
-        <% else %>
-          <th>
-          　<div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
-          　<%= "Not done yet :(" %>
-          </th>
-        <% end %>
-        </tr>
-
-        <tr>
-        <th><%= render "chores/switch", chore: chore %></th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-<% end %>

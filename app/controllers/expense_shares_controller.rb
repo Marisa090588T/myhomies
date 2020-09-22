@@ -21,8 +21,9 @@ class ExpenseSharesController < ApplicationController
   end
 
   def paid
-    @expense_share = ExpenseShare.find(params[:id])
+    @home = Home.find(params[:home_id])
     @expense = Expense.find(params[:expense_id])
+    @expense_share = ExpenseShare.find(params[:id])
     @expense_share.expense = @expense
     @expense_share.paid = true
     @expense_share.save
@@ -32,11 +33,6 @@ class ExpenseSharesController < ApplicationController
   private
 
   def expense_shares_params
-    params.require(:expense_shares).permit(:paid) 
+    params.require(:expense_shares).permit(:paid)
   end
 end
-
-
-# all bills should be displayed in each dashboard
-# (show or index) in the controller is needed?
-# change status as mark(paid or unpaid)

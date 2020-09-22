@@ -36,7 +36,6 @@ body {
 .app {
   display: flex;
   max-width: 900px;
-  // height: 100vh;
   margin: 0 auto;
   flex-direction: column;
   background-color:$global-background;
@@ -44,6 +43,7 @@ body {
   @media (min-width: 600px) {
     flex-direction: row;
   }
+  
   .app-menu {
     display: flex;
     background-color:$card-background;
@@ -104,3 +104,6 @@ body {
   text-align: left;
 }
 
+.form-check-label {
+  padding-left: 20px;
+}

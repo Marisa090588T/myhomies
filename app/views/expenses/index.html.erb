@@ -1,24 +1,36 @@
-<h1>All expenses</h1>
+<div class="all-expenses container">
+  <h1 class="text-center"><%= @home.name %>'s<br> expense list</h1>
 
-<% @expenses.each do |expense| %>
-  <div class="card bg-dark" style="width: 18rem;">
-    <table>
-      <tbody>
-          <tr><th>Bill:</th><td><%= link_to expense.name, home_expense_path(@home, expense), class:"text-center" %></td></tr>
-          <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
-          <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
-          <tr>
-          <% if @expense_share.paid %>
-              <th><%= "Paid" %></th>
-          <% else %>
-              <th><%= "Unpaid" %></th>
-          <% end %>
-          </tr>
-      </tbody>
-    </table>
+  <div class="expenses-links">
+    <div class="links btn-expenses">
+      <%= link_to 'My Expenses', user_expenses_path %>
   </div>
-<% end %>
 
-<div class="links">
-  <%= link_to 'Add a new bill', new_home_expense_path %>
+
+   <%= link_to new_home_expense_path(current_user.home), class:"action-button" do %>
+   <i class="fas fa-plus fa-2x "></i>
+   <% end %>
+
+
+
+  <% @expenses.each do |expense| %>
+    <div class="card bg-dark expenses-card" style="width: 30rem;">
+      <% if expense.paid %>
+        <div class="swal2-icon swal2-success swal2-animate-success-icon style="display: flex;">
+          <span class="swal2-success-line-tip"></span>
+          <span class="swal2-success-line-long"></span>
+          <div class="swal2-success-ring"></div>
+        </div>
+      <% else %>
+        <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
+      <% end %>
+      <ul>
+        <li>Expense: <%= link_to expense.name, home_expense_path(@home, expense), class:"text-center" %></li>
+        <li>Amount <strong class="amount">$ <%= expense.amount.round %></strong></li>
+        <li>Due on: <%= expense.due_on %></li>
+      </ul>
+    </div>
+  <% end %>
+
 </div>
+
