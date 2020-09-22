@@ -1,0 +1,46 @@
+.btn-add-expenses {
+  padding: 20px;
+}
+
+.btn-expenses {
+  font-weight: bold;
+  padding:10px;
+  width: 140px;
+  margin: 10px;
+  border-radius: 90px;
+  background-color:white;
+  text-align: center;
+  a:link {
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: $green;
+    text-decoration: none;
+  }
+}
+
+.expenses-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expenses-card {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-size: 18px;
+  li {
+    list-style: none;
+  }
+}
+
+.btn-mark {
+  margin-top: 10px;
+}
+
+.amount {
+  color: $yellow;
+}
