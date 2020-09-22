@@ -5,6 +5,7 @@
     <%= link_to 'My TODO list', user_chores_path %>
   </div>
 
+
   <div class="links btn-add-chores">
     <%= link_to new_home_chore_path(current_user.home) do %>
     <i class="fas fa-plus fa-2x "></i>
@@ -24,8 +25,9 @@
       <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
     <% end %>
     <ul>
-      <li class="todo"><strong><%= chore.name %></strong></li><br>
+      <li class="todo"><strong><%= chore.name %></strong></li>
       <li>Assigned to: <strong class="assignee-name"><%= chore.assignee.first_name %></strong></li>
+      <li>Description: <%= chore.description %></li>
     </ul>
   </div>
 <% end %>
