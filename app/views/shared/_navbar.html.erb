@@ -12,7 +12,7 @@
      <li class="nav-item dropdown">
         <%= image_tag "yoda2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu top" aria-labelledby="navbarDropdown">
-        <%= link_to "Chatroom", chatroom_path(@home), class: "dropdown-item-top"  %>
+        <%= link_to "Chatroom", chatroom_path(@home.chatroom), class: "dropdown-item-top"  %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item-top" %>
 
         <% elsif user_signed_in? %>
