@@ -39,7 +39,7 @@ class ChoresController < ApplicationController
     @chore.home = @home
     @chore.completed = !@chore.completed
     @chore.save!
-    redirect_to home_chores_path(@chore) # TODO: should go back show page?
+    redirect_to home_chores_path(@chore) 
   end
 
   private
