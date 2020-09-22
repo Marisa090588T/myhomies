@@ -2,7 +2,7 @@
 
 <div class="expenses-links">
   <div class="links btn-expenses">
-    <%= link_to 'All bills', home_expenses_path(current_user.home) %>
+    <%= link_to 'All expenses', home_expenses_path(current_user.home) %>
   </div>
 
   <div class="links btn-add-expenses">
@@ -12,23 +12,22 @@
   </div>
 </div>
 
-<% @expenses.each do |expense| %>
-  <div class="card bg-dark expenses-card" style="width: 30rem;">
-    <% if @expense_share.paid %>
-      <div class="swal2-icon swal2-success swal2-animate-success-icon style="display: flex;">
-        <span class="swal2-success-line-tip"></span>
-        <span class="swal2-success-line-long"></span>
-        <div class="swal2-success-ring"></div> 
-      </div>
-    <% else %>
-      <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
-    <% end %>
-    <ul>
-      <li>Bill: <%= link_to expense.name, home_expense_path(@home, expense), class:"text-center" %></li>
-      <li><strong class="amount">$ <%= @expense_share.share_amount.round %></strong> to pay</li>
-      <li>Due on: <%= expense.due_on %></li>
-      <li>Due to: fixing now...</li> 
-      <li class="btn-mark"><%= render "expenses/switch", expense: expense %></li>
-    </ul>
-  </div>
-<% end %>
+<% current_user.expense_shares.each do |share| %>
+    <div class="card bg-dark expenses-card" style="width: 30rem;">
+      <% if share.paid %>
+        <div class="swal2-icon swal2-success swal2-animate-success-icon style="display: flex;">
+          <span class="swal2-success-line-tip"></span>
+          <span class="swal2-success-line-long"></span>
+          <div class="swal2-success-ring"></div>
+        </div>
+      <% else %>
+        <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
+      <% end %>
+      <ul>
+        <li>Expense: <%= link_to share.expense.name, home_expense_path(@home, share.expense), class:"text-center" %></li>
+        <li>Amount <strong class="amount">$ <%= share.share_amount.round %></strong></li>
+        <li>Due on: <%= share.expense.due_on %></li>
+        <li class="btn-mark"><%= render "expenses/switch", expense: share %></li>
+      </ul>
+    </div>
+  <% end %>
