@@ -36,7 +36,6 @@ body {
 .app {
   display: flex;
   max-width: 900px;
-  height: 100%;
   margin: 0 auto;
   flex-direction: column;
   background-color:$global-background;
@@ -44,6 +43,7 @@ body {
   @media (min-width: 600px) {
     flex-direction: row;
   }
+  
   .app-menu {
     display: flex;
     background-color:$card-background;
