@@ -1,4 +1,4 @@
-<%= link_to paid_expense_path(expense), method: :patch, type: "button", class: "btn btn-md btn-done", 'data-toggle': "button", 'aria-pressed': @expense_share.paid?, autocomplete: "off" do %>
+<%= link_to paid_expense_path(expense), method: :patch, type: "button", class: "btn btn-md btn-done", 'data-toggle': "button", 'aria-pressed': expense.paid?, autocomplete: "off" do %>
   Mark as paid？
   <div class="handle"></div>
 <% end %>
