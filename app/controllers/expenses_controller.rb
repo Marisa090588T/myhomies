@@ -7,6 +7,7 @@ class ExpensesController < ApplicationController
   end
 
   def show
+    @home = Home.find {|home| current_user.home == home }
     @expense = Expense.find(params[:id])
     @expense_share = ExpenseShare.find_by(user: current_user, expense: @expense)
   end
@@ -43,10 +44,10 @@ class ExpensesController < ApplicationController
   def paid
     @expense = Expense.find(params[:id])
     @expense_share = ExpenseShare.find_by(user: current_user, expense: @expense)
-    @expense_share.expense = @expense 
+    @expense_share.expense = @expense
     @expense_share.paid = !@expense_share.paid
     @expense_share.save!
-    redirect_to home_expenses_path(@expense) 
+    redirect_to home_expenses_path(@expense)
   end
 
   private
