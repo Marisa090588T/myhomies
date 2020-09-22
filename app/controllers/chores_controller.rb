@@ -39,13 +39,13 @@ class ChoresController < ApplicationController
     @chore.home = @home
     @chore.completed = !@chore.completed
     @chore.save!
-    redirect_to home_chores_path(@chore) 
+    redirect_to home_chores_path(@chore)
   end
 
   private
 
   def chore_params
-    params.require(:chore).permit(:name, :description, :assignee)
+    params.require(:chore).permit(:name)
   end
 end
 
