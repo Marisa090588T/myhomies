@@ -1,16 +1,18 @@
-<h1 class="text-center"><%= @user.first_name %>'s bills</h1>
+<div class="my-expenses container">
+  <h1 class="text-center"><%= @user.first_name %>'s bills</h1>
 
 <div class="expenses-links">
   <div class="links btn-expenses">
     <%= link_to 'All expenses', home_expenses_path(current_user.home) %>
   </div>
 
-  <div class="links btn-add-expenses">
-    <%= link_to new_home_expense_path(current_user.home) do %>
-    <i class="fas fa-plus fa-2x "></i>
-    <% end %>
+
+    <div class="links btn-add-expenses">
+      <%= link_to new_home_expense_path(current_user.home) do %>
+      <i class="fas fa-plus fa-2x "></i>
+      <% end %>
+    </div>
   </div>
-</div>
 
 <% current_user.expense_shares.each do |share| %>
     <div class="card bg-dark expenses-card" style="width: 30rem;">
@@ -31,3 +33,4 @@
       </ul>
     </div>
   <% end %>
+
