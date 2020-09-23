@@ -16,9 +16,9 @@ Rails.application.routes.draw do
     end
     resources :chores, only: [:create, :new, :index, :show]
 
-    resources :expense_shares, only: [:show, :index] do
+    resources :expense_shares, only: [:new, :create, :show, :index] do
     end
-  end 
+  end
 
   namespace :user do
     resources :chores, only: :index
