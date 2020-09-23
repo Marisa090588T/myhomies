@@ -7,7 +7,7 @@
       <%= f.input :amount %>
       <%= f.input :due_on, as: :string, input_html: { id: "date-flatpickr" } %>
       <%= f.input :description, collection: Expense::EXPENSES %>
-      <%= f.input :expense_shares, as: :check_boxes, collection: @homies, input_html: { multiple: true }, include_hidden: false %>
+      <%= f.association :expense_shares, as: :check_boxes, collection: @home.users,  multiple: true, include_hidden: false %>
       <%= f.button :submit, value: 'Add expense', class: 'btn btn-primary btn-block' %>
     <% end %>
   </div>

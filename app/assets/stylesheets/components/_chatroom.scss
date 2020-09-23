@@ -36,5 +36,6 @@ $message-out: #FFE3C0;
   .in-message {
     background-color: $message-in;
     border-radius: 1rem 1rem 0rem 1rem;
+    float: right;
   }
 }

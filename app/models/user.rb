@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :expenses, through: :expense_shares
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  def to_label
+    "#{first_name}"
+  end
 end
