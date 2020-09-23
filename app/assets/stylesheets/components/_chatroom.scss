@@ -11,23 +11,21 @@ $message-in: #DFE0E5;
 $message-out: #FFE3C0;
 
 .chatroom {
-  margin-bottom: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  height: 350px;
-  padding: 2rem;
+  height: calc(100vh - 155px);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
   p {
     margin: 0;
   }
   .messages {
     color: $text-dark;
-    margin-bottom: 0.5rem;
   }
   .message-content {
     padding: 1rem;
     display: inline-block;
     border-radius: 1rem;
+    margin-bottom: 0.5rem;
   }
   .out-message {
     background-color: $message-out;
@@ -38,4 +36,12 @@ $message-out: #FFE3C0;
     border-radius: 1rem 1rem 0rem 1rem;
     float: right;
   }
+}
+
+.message-box {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 61px;
+  width: 100%;
 }

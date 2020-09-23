@@ -33,9 +33,6 @@ class ExpensesController < ApplicationController
     @expense.home = current_user.home
     homies_expense_shares = User.where(id: params[:expense][:expense_share_ids])
     share_amount = @expense.amount / homies_expense_shares.count
-    # TODO: can choose homies = ([] << user ).count
-
-
 
     if @expense.save
       homies_expense_shares.each do |user|
@@ -53,11 +50,21 @@ class ExpensesController < ApplicationController
   end
 
   def paid
-    @home = current_user.home
-     @expense_share = ExpenseShare.find(params[:id])
-    # @expense_share.expense = @expense
+    # @home = current_user.home
+    @expense_share = ExpenseShare.find(params[:id])
+    # @expense_share.expense = Expense.find(params[:expense_id])
     @expense_share.paid = !@expense_share.paid
     @expense_share.save!
+    @expense = Expense.find(@expense_share.expense_id)
+    @expense.save
+    @paid_shares = []
+    if @expense_share.paid == true
+      @paid_shares << @expense_share
+    end
+    if @paid_shares.count== @expense.expense_share_ids.count
+      @expense.paid == true
+      @expense.save
+    end
     redirect_to home_expenses_path(@expense_share)
   end
 
