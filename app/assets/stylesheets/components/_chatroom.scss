@@ -1,6 +1,40 @@
+$text-bright: #EBECFD;
+$text-dark: #687881;
+$text-medium: #B8C2C0;
+$global-background: #22343B;
+$card-background: #30444E;
+$grey: #96A7AF;
+$yellow: #FEC542;
+$green:#6ED3AA;
+$red: #FA5D65;
+$message-in: #DFE0E5;
+$message-out: #FFE3C0;
+
 .chatroom {
   margin-bottom: 400px;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
+  height: 350px;
+  padding: 2rem;
+  p {
+    margin: 0;
+  }
+  .messages {
+    color: $text-dark;
+    margin-bottom: 0.5rem;
+  }
+  .message-content {
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 1rem;
+  }
+  .out-message {
+    background-color: $message-out;
+    border-radius: 1rem 1rem 1rem 0rem;
+  }
+  .in-message {
+    background-color: $message-in;
+    border-radius: 1rem 1rem 0rem 1rem;
+  }
 }
