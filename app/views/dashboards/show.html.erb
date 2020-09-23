@@ -24,6 +24,30 @@
     </div>
   </div>
 
+<<<<<<< HEAD
+  <div class="homies-info">
+
+
+    <h2><%= @home.name.capitalize %>'s Homies</h2>
+
+        <% @homies.each do |homie| %>
+
+          <div class="avatar-container">
+            <div class="row">
+                  <div class="profile-header-container">
+                  <div class="profile-header-img">
+                          <%= cl_image_tag homie.photo.key, height: 50, width: 50, crop: :fill, class: 'img-circle' %>
+                          <!-- badge -->
+                          <div class="rank-label-container">
+                              <span class="label label-default rank-label"><%= homie.first_name %> <%= homie.last_name %></span>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+          </div>
+        <% end %>
+
+=======
     <%# Home info %>
   <div class="card-container">
   <div class="card">
@@ -33,6 +57,7 @@
     <div class="card-footer">
       <p>@ <%= @home.address %></p>
     </div>
+>>>>>>> ecd81ad6c3733d5d888b7f648270edcfc39c2400
   </div>
 
           <%# Expenses %>

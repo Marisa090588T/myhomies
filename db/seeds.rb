@@ -1,3 +1,5 @@
+require "open-uri"
+
 # require 'faker'
 # # This file should contain all the record creation needed to seed the database with its default values.
 # # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -100,13 +102,17 @@ Home.destroy_all
 
 puts "All homes & users destroyed!"
 
-User.create!(
+tiffany = User.create!(
   first_name: "Tiffany",
   last_name: "Duong",
   username: "tiff-o",
   email: "first@user.com",
   password: "password123"
 )
+
+file = URI.open('https://res.cloudinary.com/dq6gibxhn/image/upload/v1600839552/oexwtjog6yteqqxtf7na.jpg')
+tiffany.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+tiffany.save!
 
 puts "Created first user #{User.first.username}!"
 
@@ -135,7 +141,7 @@ Chatroom.create!(
 
 puts "Created chatroom for #{Home.first.name}!"
 
-User.create!(
+serge = User.create!(
   first_name: "Serge",
   last_name: "Osipov",
   username: "gaitcollector",
@@ -144,7 +150,11 @@ User.create!(
   home: Home.first
 )
 
-User.create!(
+file = URI.open('https://res.cloudinary.com/dq6gibxhn/image/upload/v1600839539/da2zzr8r8xdgx3la7xal.jpg')
+serge.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+serge.save!
+
+marisa = User.create!(
   first_name: "Marisa",
   last_name: "Tsubokura",
   username: "Marisa090588T",
@@ -153,7 +163,11 @@ User.create!(
   home: Home.first
 )
 
-User.create!(
+file = URI.open('https://res.cloudinary.com/dq6gibxhn/image/upload/v1600839561/uweqiajdayyfijnl5men.jpg')
+marisa.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+marisa.save!
+
+lodi = User.create!(
   first_name: "Lodi",
   last_name: "Palle",
   username: "lodipalle",
@@ -161,6 +175,10 @@ User.create!(
   password: "password123",
   home: Home.first
 )
+
+file = URI.open('https://res.cloudinary.com/dq6gibxhn/image/upload/v1600839523/gis5dryahltepoqhknk1.jpg')
+lodi.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+lodi.save!
 
 puts "Created homies - #{User.second.username}, #{User.third.username}, #{User.fourth.username}! Added to #{Home.first.name}!"
 
