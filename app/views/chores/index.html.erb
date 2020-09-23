@@ -6,28 +6,25 @@
       <%= link_to 'My TODO list', user_chores_path %>
     </div>
 
-      <%= link_to new_home_chore_path(current_user.home), class:"action-button" do %>
-      <i class="fas fa-plus fa-2x "></i>
-      <% end %>
+    <%= link_to new_home_chore_path(current_user.home), class:"action-button" do %>
+    <i class="fas fa-plus fa-2x "></i>
+    <% end %>
 
   </div>
 
   <% @chores.each do |chore| %>
     <div class="card bg-dark chores-card" style="width: 30rem;">
-      <% if chore.completed %>
-        <div class="swal2-icon swal2-success swal2-animate-success-icon style="display: flex;">
-          <span class="swal2-success-line-tip"></span>
-          <span class="swal2-success-line-long"></span>
-          <div class="swal2-success-ring"></div>
-        </div>
-      <% else %>
-        <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
-      <% end %>
       <ul>
         <li class="todo"><strong><%= chore.name %></strong></li>
         <li>Assigned to: <strong class="assignee-name"><%= chore.assignee.first_name %></strong></li>
         <li>Description: <%= chore.description %></li>
       </ul>
+      <% if chore.completed %>
+        <i class="far fa-check-circle fa-2x mark-done"></i>
+      <% else %>
+        <i class="far fa-check-circle fa-2x mark-yet"></i>
+      <% end %>
     </div>
   <% end %>
-</div>
+
+  </div>

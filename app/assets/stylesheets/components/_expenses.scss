@@ -34,12 +34,15 @@
 }
 
 .expenses-card {
-  padding: 20px 0px;
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: row;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
+  ul {
+    padding: 0;
+  }
   li {
     list-style: none;
   }
@@ -47,6 +50,14 @@
 
 .btn-mark {
   margin-top: 10px;
+}
+
+.mark-done {
+  color: $green;
+}
+
+.mark-yet {
+  color: gray;
 }
 
 .amount {
