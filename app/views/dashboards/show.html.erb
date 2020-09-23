@@ -17,7 +17,7 @@
             <div class="row">
                   <div class="profile-header-container">
                   <div class="profile-header-img">
-                          <img class="img-circle" src="https://pbs.twimg.com/media/D6PkrcbUUAANQZe.jpg"/>
+                          <%= cl_image_tag homie.photo.key, height: 50, width: 50, crop: :fill, class: 'img-circle' %>
                           <!-- badge -->
                           <div class="rank-label-container">
                               <span class="label label-default rank-label"><%= homie.first_name %> <%= homie.last_name %></span>
