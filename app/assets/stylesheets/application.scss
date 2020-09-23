@@ -39,7 +39,7 @@ body {
   margin: 0 auto;
   flex-direction: column;
   background-color:$global-background;
-  color: white;
+  color:$text-medium;
   @media (min-width: 600px) {
     flex-direction: row;
   }
@@ -53,7 +53,7 @@ body {
   .app-header {
     display: flex;
     background-color:$global-background;
-    max-height: 60px;
+    max-height: 80px;
     justify-content: space-between;
     padding-right: 50px;
   }
@@ -67,7 +67,11 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
   justify-content: space-between;
 }
 

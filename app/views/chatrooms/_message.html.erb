@@ -1,0 +1,21 @@
+<% if message.user == current_user %>
+  <div class="messages" id="message-<%= message.id %>">
+    <div class="message-content in-message">
+      <i class="author">
+        <span><%= message.user.first_name %></span>
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= message.content %></p>
+    </div>
+  </div>
+<% else %>
+  <div class="messages" id="message-<%= message.id %>">
+    <div class="message-content out-message">
+      <i class="author">
+        <span><%= message.user.first_name %></span>
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= message.content %></p>
+    </div>
+  </div>
+<% end %>

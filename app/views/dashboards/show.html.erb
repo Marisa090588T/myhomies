@@ -1,11 +1,30 @@
-<div class="container">
 
-  <div class="home-info">
-    <% if @home %>
-      <h1><%= @home.name.capitalize %></h1>
-      <p>@ <%= @home.address %></p>
+<div class="container">
+<% if @home %>
+
+            <%# Homies %>
+  <div class="card-container">
+  <div class="card">
+    <div class="card-content">
+      <div class="avatar-container">
+      <% @homies.each do |homie| %>
+        <div class="row">
+              <div class="profile-header-container">
+              <div class="profile-header-img">
+                <img class="img-circle" src="https://pbs.twimg.com/media/D6PkrcbUUAANQZe.jpg"/>
+                <!-- badge -->
+                <div class="rank-label-container">
+                  <span class="label label-default rank-label"><%= homie.first_name %></span>
+                </div>
+              </div>
+              </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
   </div>
 
+<<<<<<< HEAD
   <div class="homies-info">
 
 
@@ -28,12 +47,27 @@
           </div>
         <% end %>
 
+=======
+    <%# Home info %>
+  <div class="card-container">
+  <div class="card">
+    <div class="card-content">
+      <h4><%= @home.name.capitalize %></h4>
+    </div>
+    <div class="card-footer">
+      <p>@ <%= @home.address %></p>
+    </div>
+>>>>>>> ecd81ad6c3733d5d888b7f648270edcfc39c2400
   </div>
 
-    <div class="expenses-list">
-    <h2><%= @home.name %>'s Expenses </h2>
+          <%# Expenses %>
+  <div class="card-container">
+    <div class="card">
+    <div class="card-content">
+      <h4>Expenses </h4>
+    </div>
+    <div class="card-footer">
       <% @home.expenses.each do |expense| %>
-
         <table>
           <tbody>
               <tr><th>Expense:</th><td><%= link_to expense.name, home_expense_path(@home, expense) %></td></tr>
@@ -41,41 +75,49 @@
               <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
               <tr>
               <% if expense.paid %>
-                  <th><%= "Paid" %></th>
+                <th><%= "Paid" %></th>
               <% else %>
-                  <th><%= "Unpaid" %></th>
+                <th><%= "Unpaid" %></th>
               <% end %>
+              </tr>
+            </tbody>
+          </table>
+      <% end %>
+    </div>
+  </div>
+
+        <%# To Do list %>
+  <div class="card-container">
+  <div class="card">
+    <div class="card-content">
+      <h4>#TODO</h4>
+    </div>
+    <div class="card-footer">
+        <% @home.chores.each do |chore| %>
+        <table>
+          <tbody>
+              <tr><th>TODO:</th><td><%= link_to chore.name, home_chore_path(@home, chore) %></td></td></tr>
+              <tr><th></th><td><%= chore.description %></td></tr>
+              <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
+              <tr>
+                <% if chore.completed %>
+                  <th> <%= "All done!" %></th>
+                <% else %>
+                  <th><%= "Not done yet :(" %></th>
+                <% end %>
               </tr>
           </tbody>
         </table>
-
-  <% end %>
-
+        <% end %>
+    </div>
   </div>
 
-  <div class="chores-list">
-  <h2><%= @home.name %>'s TODO list</h2>
-    <% @home.chores.each do |chore| %>
 
-      <table>
-        <tbody>
-            <tr><th>TODO:</th><td><%= link_to chore.name, home_chore_path(@home, chore) %></td></td></tr>
-            <tr><th>Description:</th><td><%= chore.description %></td></tr>
-            <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
-            <tr>
-              <% if chore.completed %>
-                <th> <%= "All done!" %></th>
-              <% else %>
-                <th><%= "Not done yet :(" %></th>
-              <% end %>
-            </tr>
 
-          </tbody>
-        </table>
 
-    <% end %>
 
-  </div>
+
+
 
   <div class="invite-homie">
     <p> To invite new homie - send them this link </p>
@@ -108,3 +150,6 @@
   </div>
 
 </div>
+
+
+
