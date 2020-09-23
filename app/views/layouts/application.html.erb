@@ -22,19 +22,19 @@
   <body>
   <div class="app">
   
-      <div class="app-header">
-        <%= render 'shared/navbar' %>
-      </div>
+    <div class="app-header">
+      <%= render 'shared/navbar' %>
+    </div>
 
-      <div class="app-content">
-        <%= render 'shared/flashes' %>
-        <%= yield %>
+    <div class="app-content">
+      <%= render 'shared/flashes' %>
+      <%= yield %>
 
-      <% if user_signed_in? && current_user.home %>
+    <% if user_signed_in? && current_user.home %>
 
-        <%= render 'shared/bottom_nav' %>
+      <%= render 'shared/bottom_nav' %>
 
-      <% end %>
+    <% end %>
 
   </div>
 
