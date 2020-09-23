@@ -185,8 +185,7 @@ puts "Created homies - #{User.second.username}, #{User.third.username}, #{User.f
 Message.create!(
   content: "Morning homies! Reminder that rent is coming out on Tuesday :)",
   chatroom: Chatroom.first,
-  user: User.first,
-  created_at: "Thu, 24 Sep 2020 08:28:05 UTC +00:00"
+  user: User.first
 )
 
 puts "First message in #{Chatroom.first.name}!"
@@ -194,8 +193,7 @@ puts "First message in #{Chatroom.first.name}!"
 Message.create!(
   content: "All good - just transferred. Grabbing some TP at the shops soon FYI.",
   chatroom: Chatroom.first,
-  user: User.second,
-  created_at: "Thu, 24 Sep 2020 14:16:01 UTC +00:00"
+  user: User.second
 )
 
 puts "Second message in #{Chatroom.first.name}!"
@@ -203,8 +201,7 @@ puts "Second message in #{Chatroom.first.name}!"
 Message.create!(
   content: "Cool, I'll transfer for rent tomorrow!",
   chatroom: Chatroom.first,
-  user: User.third,
-  created_at: "Thu, 24 Sep 2020 15:33:12 UTC +00:00"
+  user: User.third
 )
 
 puts "Third message in #{Chatroom.first.name}!"
@@ -212,9 +209,7 @@ puts "Third message in #{Chatroom.first.name}!"
 Message.create!(
   content: "Anyone know where the remote went?",
   chatroom: Chatroom.first,
-  user: User.fourth,
-  created_at: "Fri, 25 Sep 2020 11:14:04 UTC +00:00"
-)
+  user: User.fourth)
 
 puts "Fourth message in #{Chatroom.first.name}!"
 
