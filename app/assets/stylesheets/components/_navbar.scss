@@ -10,7 +10,6 @@ $green:#6ED3AA;
 $red: #FA5D65;
 $message-in: #DFE0E5;
 $message-out: #FFE3C0;
-//
 
 // .navbar-lewagon {
 //  justify-content: space-between;
@@ -21,8 +20,6 @@ $message-out: #FFE3C0;
  flex-grow: 0;
 }
 
-
-
 .navbar-brand img {
   width: 60px;
 }
@@ -30,7 +27,6 @@ $message-out: #FFE3C0;
 .nav-item.dropdown {
   list-style-type:none;
   padding: 15px 15px;
-
 }
 
 // .nav-item.dropdown img {
@@ -50,9 +46,9 @@ $message-out: #FFE3C0;
   top: 100%;
   margin-top: 11px;
   left: -34%;
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 10px;
-  opacity: 0.8;
+  opacity: 1.8;
 }
 
 .dropdown-menu-top.show li {
@@ -61,7 +57,10 @@ $message-out: #FFE3C0;
 }
 
 .dropdown-item-top {
-  margin: auto;
+  margin-left: 15px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: auto;
   width: auto;
 }
 
@@ -71,4 +70,8 @@ a.dropdown-item-top {
 
 .avatar.dropdown-toggle {
   width: 60px;
+}
+
+.btn-danger {
+  background-color: #FA5D65 !important;
 }

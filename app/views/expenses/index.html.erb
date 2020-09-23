@@ -6,7 +6,6 @@
       <%= link_to 'My Expenses', user_expenses_path %>
   </div>
 
-
    <%= link_to new_home_expense_path(current_user.home), class:"action-button" do %>
    <i class="fas fa-plus fa-2x "></i>
    <% end %>
@@ -15,20 +14,16 @@
 
   <% @expenses.each do |expense| %>
     <div class="card bg-dark expenses-card" style="width: 30rem;">
-      <% if expense.paid %>
-        <div class="swal2-icon swal2-success swal2-animate-success-icon style="display: flex;">
-          <span class="swal2-success-line-tip"></span>
-          <span class="swal2-success-line-long"></span>
-          <div class="swal2-success-ring"></div>
-        </div>
-      <% else %>
-        <div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: flex;"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div>
-      <% end %>
       <ul>
         <li>Expense: <%= link_to expense.name, home_expense_path(@home, expense), class:"text-center" %></li>
         <li>Amount <strong class="amount">$ <%= expense.amount.round %></strong></li>
         <li>Due on: <%= expense.due_on %></li>
       </ul>
+      <% if expense.paid %>
+        <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
+      <% else %>
+        <div><i class="far fa-check-circle fa-2x mark-yet"></i></div>
+      <% end %>
     </div>
   <% end %>
 

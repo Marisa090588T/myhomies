@@ -22,9 +22,9 @@ body, html {
 
 
 .profile-header-img > img.img-circle {
-    width: 120px;
-    height: 120px;
-    border: 2px solid #51D2B7;
+    width: 50px;
+    height: 50px;
+    border: 2px solid $yellow;
 }
 
 
@@ -39,8 +39,8 @@ body, html {
 }
 
 .label.label-default.rank-label {
-    background-color: rgb(81, 210, 183);
-    padding: 5px 10px 5px 10px;
+    background-color: $yellow;
+    padding: 2px 10px 2px 4px;
     border-radius: 27px;
 }
 
@@ -48,11 +48,7 @@ body, html {
   border-radius: 50%;
 }
 
-.avatar-container {
-  display: flex;
-  height: auto;
-  justify-content: center;
-}
+
 
 
 /// new Dashboard card
@@ -63,34 +59,44 @@ body, html {
 
 .card-container {
   display: flex;
+  .avatar-container {
+    display: flex;
+    height: auto;
+    justify-content:space-evenly;
+
+  }
 
   .card {
+    max-width: auto;
+    min-width: 330px;
     margin: 20px;
     border-radius: 10px;
     background-color: $card-background;
     overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 
     .card-content {
-      padding: 20px;
+      padding: 3px;
       padding-top: 0px;
 
-      >h2 {
-        margin-top: 0px;
+      >h4 {
+        margin-top: 5px;
         text-align: center;
+        color: $yellow;
       }
     }
 
     .card-footer {
       padding: 20px;
       color: $text-medium;
+      justify-content: space-between;
     }
 
 
   }&:nth-child(1) {
 
       .card-footer {
-        background-image: linear-gradient(90deg, $card-background, $global-background);
+        background-image: radial-gradient(90deg, $card-background, $global-background);
       }
     }
 

@@ -37,12 +37,15 @@
 }
 
 .chores-card {
-  padding: 20px 0px;
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  font-size: 18px;
+  font-size: 14px;
+  ul {
+    padding: 0;
+  }
   li {
     list-style: none;
   }
@@ -53,7 +56,16 @@
 }
 
 .assignee-name {
+  font-size: 18px;
   color: $yellow;
+}
+
+.mark-done {
+  color: $green;
+}
+
+.mark-yet {
+  color: gray;
 }
 
 .btn-mark {
