@@ -124,12 +124,20 @@ body, html {
       color: $yellow;
     }
 
+    .color-white{
+      color: white;
+    }
+
     .card-each {
       display:flex;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0px 16px;
+      padding: 8px 16px 0px;
+      border-bottom: 1px solid $text-dark;
+      &:last-child {
+        border-bottom: none;
+      }
       }
 
   }&:nth-child(1) {
