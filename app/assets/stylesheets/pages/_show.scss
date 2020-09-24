@@ -75,7 +75,6 @@ body, html {
     border-radius: 10px;
     background: transparent;
     overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
 
 
@@ -98,6 +97,27 @@ body, html {
     .card-content {
       padding: 3px;
       // padding-top: 0px;
+
+      //invite homie
+      button {
+        background-color: $yellow;
+        border-radius: 20px;
+        color:$global-background;
+        border: none;
+        margin-left: 6px;
+        //float: right;
+        font-size: small;
+        padding: 4px;
+      }
+      p {
+        color: $yellow;
+      }
+      #homie-invite-link {
+        color: $yellow;
+        background-color: $grey;
+        border-radius: 9px;
+        float: center;
+      }
 
       >h4 {
         margin-top: 5px;

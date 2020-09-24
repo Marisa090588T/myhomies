@@ -81,34 +81,39 @@
   </div>
 </div>
 
-  <div class="invite-homie">
-    <p> To invite new homie - send them this link </p>
-    <input type="text" value=<%= new_invitation_url(@home.invite_token) %> id="homie-invite-link">
 
-    <button onclick="copyInviteLink()">Copy link</button>
+    <%# invite %>
+  <div class="card-container">
+  <div class="card">
+    <div class="card-content">
+      <p> New homie? - send them this link </p>
+      <input type="text" value=<%= new_invitation_url(@home.invite_token) %> id="homie-invite-link">
 
-    <script>
-    const copyInviteLink = () => {
+      <button onclick="copyInviteLink()">Copy link</button>
 
-      const copyText = document.getElementById("homie-invite-link");
+      <script>
+      const copyInviteLink = () => {
 
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
+        const copyText = document.getElementById("homie-invite-link");
 
-      document.execCommand("copy");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
 
-      alert("Copied the text: " + copyText.value);
-    }
-    </script>
+        document.execCommand("copy");
 
-    <p><%= link_to 'refresh invite link', home_invitations_path(@home), method: :patch, remote: true %></p>
-  </div>
-  <% else %>
+        alert("Copied the text: " + copyText.value);
+      }
+      </script>
 
-  <div class="homeless">
-      "No home yet :("
-      <p><%= link_to "Add a home", new_home_path %></p>
-    <% end %>
+      <p><%= link_to 'refresh invite link', home_invitations_path(@home), method: :patch, remote: true %></p>
+    </div>
+      <% else %>
+
+    <div class="homeless">
+        "No home yet :("
+        <p><%= link_to "Add a home", new_home_path %></p>
+      <% end %>
+    </div>
   </div>
 
 </div>
