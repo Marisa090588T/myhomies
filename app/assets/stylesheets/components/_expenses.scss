@@ -52,7 +52,7 @@
 .expenses-card {
   max-width: auto;
   min-width: 330px;
-  margin: 5px auto;
+  margin: 10px 5px;
   border-radius: 10px;
   background-color: $card-background;
   overflow: hidden;
@@ -79,7 +79,7 @@
   .color-white{
     color: white;
   }
-  
+
   .expenses-card-footer {
     padding: 10px 20px;
     color: $text-medium;
