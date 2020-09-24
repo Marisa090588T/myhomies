@@ -2,9 +2,10 @@
   <h4 class="text-center expenses-title">All expense lists</h4>
 
   <div class="expenses-links">
-    <div class="links btn-expenses">
+    <%= render "expenses/toggle_my_expenses" %>
+    <%# <div class="links btn-expenses">
       <%= link_to 'My Expenses', user_expenses_path %>
-    </div>
+    <%# </div>  %>
 
    <%= link_to new_home_expense_path(current_user.home), class:"action-button" do %>
    <i class="fas fa-plus fa-2x "></i>

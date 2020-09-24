@@ -2,7 +2,9 @@
   <h4 class="text-center chores-title">All TODO lists</h4>
 
   <div class="chores-links">
-    <div class="links btn-chores">
+  <%= render "chores/toggle_my_chores" %>
+    <%# <div class="links btn-chores">
+
       <%= link_to 'My TODO list', user_chores_path %>
     </div>
 
