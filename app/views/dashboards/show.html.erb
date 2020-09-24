@@ -43,6 +43,7 @@
         <ul>
           <li><%= link_to expense.name, home_expense_path(@home, expense) %></li>
           <li>Amount: <strong class="amount">$ <%= expense.amount.round %></strong></li>
+          <li>Description: <%= expense.description %></li>
           <li>Due on: <%= expense.due_on %></li>
         </ul>
         <% if expense.paid %>
@@ -64,23 +65,21 @@
     </div>
     <div class="card-footer">
         <% @home.chores.each do |chore| %>
-        <table>
-          <tbody>
-              <tr><th>TODO:</th><td><%= link_to chore.name, home_chore_path(@home, chore) %></td></td></tr>
-              <tr><th></th><td><%= chore.description %></td></tr>
-              <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
-              <tr>
-                <% if chore.completed %>
-                  <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
-                <% else %>
-                  <div><i class="far fa-check-circle fa-2x mark-yet"></i></div>
-                <% end %>
-              </tr>
-          </tbody>
-        </table>
+      <div class="card-each">
+        <ul>
+          <li class="chore-name"><%= chore.name %></li>
+          <li>Description: <%= chore.description %></li>
+          <li>Assigned to:<strong class="amount"> <%= chore.assignee.first_name %></strong></li>
+        </ul>
+        <% if chore.completed %>
+          <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
+        <% else %>
+          <div><i class="far fa-check-circle fa-2x mark-yet"></i></div>
         <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
+</div>
 
   <div class="invite-homie">
     <p> To invite new homie - send them this link </p>
