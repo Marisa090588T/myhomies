@@ -4,6 +4,7 @@
             <%# Homies %>
   <div class="card-container">
   <div class="card" style="margin-top: 90px">
+
     <div class="card-content">
       <div class="avatar-container">
       <% @homies.each do |homie| %>
@@ -40,14 +41,14 @@
       <% @home.expenses.each do |expense| %>
         <table>
           <tbody>
-              <tr><th>Expense:</th><td><%= link_to expense.name, home_expense_path(@home, expense) %></td></tr>
+              <tr><th></th><td><%= link_to expense.name, home_expense_path(@home, expense) %></td></tr>
               <tr><th>$ </th><td><%= expense.amount %></td><td>to pay</td></tr>
               <tr><th>Due on:</th><td><%= expense.due_on %></td></tr>
               <tr>
               <% if expense.paid %>
-                <th><%= "Paid" %></th>
+                <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
               <% else %>
-                <th><%= "Unpaid" %></th>
+                <div><i class="far fa-check-circle fa-2x mark-yet"></i></div>
               <% end %>
               </tr>
             </tbody>
@@ -71,9 +72,9 @@
               <tr><th>Assigned to:</th><td><%= chore.assignee.first_name %></td></tr>
               <tr>
                 <% if chore.completed %>
-                  <th> <%= "All done!" %></th>
+                  <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
                 <% else %>
-                  <th><%= "Not done yet :(" %></th>
+                  <div><i class="far fa-check-circle fa-2x mark-yet"></i></div>
                 <% end %>
               </tr>
           </tbody>
