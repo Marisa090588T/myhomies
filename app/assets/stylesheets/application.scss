@@ -117,4 +117,19 @@ body {
 
 .form-check-label {
   padding-left: 20px;
+  img {
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    border: 1px solid $yellow;
+  }
+}
+
+.form-check {
+  margin: 5px;
+}
+
+.col-form-label {
+  border: none;
+  height: 3px;
 }
