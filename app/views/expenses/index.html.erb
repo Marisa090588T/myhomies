@@ -1,4 +1,4 @@
-<div class="all-expenses container" style="padding-top: 80px">
+<div class="all-expenses" style="padding-top: 80px">
   <h4 class="text-center expenses-title">All expense lists</h4>
 
   <div class="expenses-links">
@@ -12,7 +12,7 @@
   </div>
 
   <% @expenses.each do |expense| %>
-    <div class="card expenses-card" style="width: 30rem;">
+    <div class="card expenses-card" style="width: auto;">
       <div class="expenses-card-content">
         <h4><%= link_to expense.name, home_expense_path(@home, expense), class:"text-center" %></h4>
       </div>
