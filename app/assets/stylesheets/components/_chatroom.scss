@@ -15,6 +15,10 @@ $message-out: #FFE3C0;
   overflow: scroll;
   display: flex;
   flex-direction: column;
+  h4 {
+    text-align: center;
+    color: #FEC542;
+  }
   p {
     margin: 0;
   }
@@ -44,4 +48,8 @@ $message-out: #FFE3C0;
   position: fixed;
   bottom: 61px;
   width: 100%;
+}
+
+.user {
+  font-weight: bold;
 }
