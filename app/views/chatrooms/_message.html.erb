@@ -13,7 +13,7 @@
   <div class="messages" id="message-<%= message.id %>">
     <div class="message-content out-message">
       <i class="author">
-      <%= cl_image_tag message.user.photo.key, height: 30, width: 30, crop: :fill, class: 'img-circle' %>
+        <%= cl_image_tag message.user.photo.key, height: 30, width: 30, crop: :fill, class: 'img-circle' %>
         <span><b><%= message.user.first_name %></b></span>
         <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
       </i>
