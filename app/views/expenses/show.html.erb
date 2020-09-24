@@ -1,23 +1,31 @@
-<h1>Expense detail</h1>
+<div class="all-expenses container">
+  <h4 class="text-center expenses-title">Expense detail</h4>
 
-<div class="card" style="width: 18rem;">
-  <table>
-    <tbody>
-      <tr><th>Expense:</th><td><%= @expense.name %></td></tr>
-      <tr><th>$ </th><td><%= @expense.amount %></td><td>to pay</td></tr>
-      <tr><th>Due on:</th><td><%= @expense.due_on %></td></tr>
-      <tr><th>Description:</th><td><%= @expense.description %></td></tr>
-      <tr>
+  <div class="expenses-links">
+    <div class="links btn-expenses">
+      <%= link_to 'All expenses', home_expenses_path(current_user.home) %>
+    </div>
+
+    <%= link_to new_home_expense_path(current_user.home), class:"action-button" do %>
+    <i class="fas fa-plus fa-2x "></i>
+    <% end %>
+  </div>
+
+  <div class="card expenses-card" style="width: 30rem;">
+    <div class="expenses-card-content">
+      <h4><%= @expense.name %></h4>
+    </div>
+    <div class="card-footer expenses-card-footer">
+      <ul>
+        <li>Amount <strong class="amount">$ <%= @expense.amount.round %></strong></li>
+        <li>Due on: <%= @expense.due_on %></li>
+        <li>Description:</th><td><%= @expense.description %></li>
+      </ul>
       <% if @expense.paid %>
-          <th><%= "Paid" %></th>
+        <i class="far fa-check-circle fa-2x mark-done"></i>
       <% else %>
-          <th><%= "Unpaid" %></th>
+        <i class="far fa-check-circle fa-2x mark-yet"></i>
       <% end %>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="links">
-  <%= link_to " Back ", home_expenses_path %>
+    </div>
+  </div>
 </div>

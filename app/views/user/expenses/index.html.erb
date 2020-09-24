@@ -1,5 +1,5 @@
 <div class="my-expenses container">
-  <h1 class="text-center"><%= @user.first_name %>'s bills</h1>
+  <h4 class="text-center expenses-title"><%= @user.first_name %>'s expense lists</h1>
 
 <div class="expenses-links">
   <div class="links btn-expenses">
@@ -9,20 +9,26 @@
   <%= link_to new_home_expense_path(current_user.home), class:"action-button" do %>
   <i class="fas fa-plus fa-2x "></i>
   <% end %>
+</div>
 
 <% current_user.expense_shares.each do |share| %>
-  <div class="card bg-dark expenses-card" style="width: 30rem;">
-    <ul>
-      <li>Expense: <%= link_to share.expense.name, home_expense_path(@home, share.expense), class:"text-center" %></li>
-      <li>Amount <strong class="amount">$ <%= share.share_amount.round %></strong></li>
-      <li>Due on: <%= share.expense.due_on %></li>
-      <li class="btn-mark"><%= render "expenses/switch", expense: share %></li>
-    </ul>
-    <% if share.paid %>
-      <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
-    <% else %>
-      <div><i class="far fa-check-circle fa-2x mark-yet"></i></div>
-    <% end %>
+  <div class="card expenses-card" style="width: 30rem;">
+    <div class="expenses-card-content">
+      <h4><%= link_to share.expense.name, home_expense_path(@home, share.expense), class:"text-center" %></h4>
+    </div>
+    <div class="card-footer expenses-card-footer">
+      <ul>
+        <li>Amount: <strong class="amount">$ <%= share.share_amount.round %></strong></li>
+        <li>Due on: <%= share.expense.due_on %></li>
+        <li>Description: </th><td><%= share.expense.description %></li>
+        <li class="btn-mark"><%= render "expenses/switch", expense: share %></li>
+      </ul>
+      <% if share.paid %>
+        <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
+      <% else %>
+        <div><i class="far fa-check-circle fa-2x mark-yet"></i></div>
+      <% end %>
+    </div>
   </div>
 <% end %>
 
