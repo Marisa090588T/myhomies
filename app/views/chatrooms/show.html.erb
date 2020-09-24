@@ -1,4 +1,4 @@
-<div class="chatroom">
+<div class="chatroom" style="margin-top: 60px">
   <div class="container flex-grow-1">
     <h4>#<%= @chatroom.name %></h4>
     <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
@@ -7,7 +7,7 @@
       <% end %>
     </div>
   </div>
- 
+
   <div class="message-box flex-shrink-0">
     <%= simple_form_for [ @chatroom, @message ], remote: true, html: { class: "d-flex w-100"} do |f| %>
       <%= f.input :content, label: false, placeholder: "Say hi to homies!", input_html: { class: "mb-0 flex-grow-1"}, wrapper_html: { class: "d-flex flex-grow-1 mb-0"} %>
