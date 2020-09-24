@@ -2,9 +2,11 @@
   <h4 class="text-center chores-title">My TODO lists</h4>
 
   <div class="chores-links">
-    <div class="links btn-chores">
+    <%= render "chores/toggle_all_chores" %>
+    <%# <div class="links btn-chores">
+
       <%= link_to 'All TODO list', home_chores_path(current_user.home) %>
-    </div>
+    <%# </div>  %>
 
       <%= link_to new_home_chore_path(current_user.home), class:"action-button" do %>
       <i class="fas fa-plus fa-2x "></i>
