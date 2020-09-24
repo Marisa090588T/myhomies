@@ -19,7 +19,7 @@
       <div class="card-footer expenses-card-footer">
         <ul>
           <li>Amount: <strong class="amount">$ <%= expense.amount.round %></strong></li>
-          <li>Due on: <%= expense.due_on %></li>
+          <li>Due on: <span class="color-white"><%= expense.due_on.strftime('%d %b') %></span></li>
           <li>Description: </th><td><%= expense.description %></li>
         </ul>
         <% if expense.paid %>

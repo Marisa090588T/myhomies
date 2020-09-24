@@ -19,8 +19,8 @@
     <div class="card-footer expenses-card-footer">
       <ul>
         <li>Amount: <strong class="amount">$ <%= share.share_amount.round %></strong></li>
-        <li>Due on: <%= share.expense.due_on %></li>
-        <li>Description: </th><td><%= share.expense.description %></li>
+        <li>Due on: <span class="color-white"><%= share.expense.due_on.strftime('%d %b') %></span></li>
+        <li>Description: <%= share.expense.description %></li>
         <li class="btn-mark"><%= render "expenses/switch", expense: share %></li>
       </ul>
       <% if share.paid %>
