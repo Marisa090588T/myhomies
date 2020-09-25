@@ -111,12 +111,15 @@ body, html {
       }
       p {
         color: $yellow;
+        margin: 5px 0;
       }
       #homie-invite-link {
         color: $yellow;
         background-color: $grey;
         border-radius: 9px;
         float: center;
+        margin: 5px 0px;
+
       }
 
       >h4 {
