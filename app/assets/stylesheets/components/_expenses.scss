@@ -76,10 +76,6 @@
     }
   }
 
-  .color-white{
-    color: white;
-  }
-
   .expenses-card-footer {
     padding: 10px 20px;
     color: $text-medium;
@@ -108,8 +104,7 @@
   color: gray;
 }
 
-.amount {
-  font-size: 18px;
-  color: white;
+.color-tone-up {
+  color: #DFE0E5;
 }
 

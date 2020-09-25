@@ -1,16 +1,15 @@
 .action-button {
     position: fixed;
-    bottom: 80px;
-    right: 20px;
+    bottom: 74px;
+    right: 14px;
     z-index: 10;
-    height: 60px;
-    width: 60px;
-    background-color: white;
-    opacity: 0.7;
+    height: 45px;
+    width: 45px;
+    background-color: #6ED3AA;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 10px rgba(200,200,200,0.8);
+    box-shadow: 0 0 2px rgba(200,200,200,0.8);
 }
 

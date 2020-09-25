@@ -42,8 +42,8 @@
       <div class="card-each">
         <ul>
           <li><%= link_to expense.name, home_expense_path(@home, expense) %></li>
-          <li>Amount: <strong class="amount">$ <%= expense.amount.round %></strong></li>
-          <li>Due on: <span class="color-white"><%= expense.due_on.strftime('%d %b') %></span></li>
+          <li>Amount: <span class="color-tone-up">$ <%= expense.amount.round %></strong></li>
+          <li>Due on: <span class="color-tone-up"><%= expense.due_on.strftime('%d %b') %></span></li>
           <li>Description: <%= expense.description %></li>
         </ul>
         <% if expense.paid %>
@@ -68,8 +68,8 @@
       <div class="card-each">
         <ul>
           <li class="chore-name"><%= chore.name %></li>
-          <li>Assigned to:<strong class="amount"> <%= chore.assignee.first_name %></strong></li>
-          <li>Description: <%= chore.description %></li>
+          <li>Dear: <span class="color-tone-up"><%= chore.assignee.first_name %></li>
+          <li>Please: <%= chore.description %></li>
         </ul>
         <% if chore.completed %>
           <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
