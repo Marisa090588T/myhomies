@@ -20,8 +20,8 @@
       </div>
       <div class="card-footer chores-card-footer">
         <ul>
-          <li>Assigned to: <strong class="assignee-name"><%= chore.assignee.first_name %></strong></li>
-          <li>Description: <%= chore.description %></li>
+          <li>Dear: <span class="assignee-name"><%= chore.assignee.first_name %></span></li>
+          <li>Please: <%= chore.description %></li>
         </ul>
         <% if chore.completed %>
           <i class="far fa-check-circle fa-2x mark-done"></i>
