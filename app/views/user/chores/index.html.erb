@@ -24,11 +24,6 @@
           <li>Description: <%= chore.description %></li>
           <li class="btn-mark"><%= render "chores/switch", chore: chore %></li>
         </ul>
-          <% if chore.completed %>
-          <i class="far fa-check-circle fa-2x mark-done"></i>
-        <% else %>
-          <i class="far fa-check-circle fa-2x mark-yet"></i>
-        <% end %>
       </div>
     </div>
   <% end %>

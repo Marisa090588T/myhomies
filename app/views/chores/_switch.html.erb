@@ -1,4 +1,13 @@
-<%= link_to done_chore_path(chore), method: :patch, type: "button", class: "btn btn-md btn-done", 'data-toggle': "button", 'aria-pressed': chore.completed?, autocomplete: "off" do %>
-  Mark as done？
-  <div class="handle"></div>
+
+<% if chore.completed %>
+  <i><%= link_to done_chore_path(chore), method: :patch, type: "button", class: "far fa-check-circle fa-2x mark-done", 'data-toggle': "button", 'aria-pressed': chore.completed == false, autocomplete: "off" do %>
+    <div class="handle"></div>
+  <% end %></i>
+
+<% else %>
+
+  <i><%= link_to done_chore_path(chore), method: :patch, type: "button", class: "far fa-check-circle fa-2x mark-yet", 'data-toggle': "button", 'aria-pressed': chore.completed == true, autocomplete: "off" do %>
+    <div class="handle"></div>
+  <% end %></i>
 <% end %>
+
