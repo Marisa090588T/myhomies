@@ -1,6 +1,5 @@
-<div class="chatroom" style="margin-top: 60px">
+<div class="chatroom" style="margin-top: 100px">
   <div class="container flex-grow-1">
-    <h4>#<%= @chatroom.name %></h4>
     <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% @chatroom.messages.each do |message| %>
         <%= render "message", message: message %>
