@@ -23,7 +23,9 @@
           <li>Dear: <span class="assignee-name"><%= chore.assignee.first_name %></span></li>
           <li>Please: <%= chore.description %></li>
         </ul>
-        <li class="btn-mark"><%= render "chores/switch", chore: chore %></li>
+        <div>
+          <li class="btn-mark"><%= render "chores/switch", chore: chore %></li>
+        </div>
       </div>
     </div>
   <% end %>

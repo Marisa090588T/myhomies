@@ -21,7 +21,7 @@
         <ul>
           <li>Amount: <span class="color-tone-up">$ <%= expense.amount.round %></span></li>
           <li>Due on: <span class="color-tone-up"><%= expense.due_on.strftime('%d %b') %></span></li>
-          <li>Description: </th><td><%= expense.description %></li>
+          <li>Description: <%= expense.description %></li>
         </ul>
         <% if expense.paid %>
           <div><i class="far fa-check-circle fa-2x mark-done"></i></div>

@@ -23,7 +23,9 @@
         <li>Due on: <span class="color-tone-up"><%= share.expense.due_on.strftime('%d %b') %></span></li>
         <li>Description: <%= share.expense.description %></li>
       </ul>
-      <li class="btn-mark"><%= render "expenses/switch", expense: share %></li>
+      <div>
+        <i class="btn-mark"><%= render "expenses/switch", expense: share %></i>
+      </div>
     </div>
   </div>
 <% end %>
