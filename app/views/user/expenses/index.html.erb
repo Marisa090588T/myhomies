@@ -22,13 +22,8 @@
         <li>Amount: <span class="color-tone-up">$ <%= share.share_amount.round %></span></li>
         <li>Due on: <span class="color-tone-up"><%= share.expense.due_on.strftime('%d %b') %></span></li>
         <li>Description: <%= share.expense.description %></li>
-        <li class="btn-mark"><%= render "expenses/switch", expense: share %></li>
       </ul>
-      <% if share.paid %>
-        <div><i class="far fa-check-circle fa-2x mark-done"></i></div>
-      <% else %>
-        <div><i class="far fa-check-circle fa-2x mark-yet"></i></div>
-      <% end %>
+      <li class="btn-mark"><%= render "expenses/switch", expense: share %></li>
     </div>
   </div>
 <% end %>
