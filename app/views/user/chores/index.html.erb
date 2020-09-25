@@ -22,13 +22,8 @@
         <ul>
           <li>Dear: <span class="assignee-name"><%= chore.assignee.first_name %></span></li>
           <li>Please: <%= chore.description %></li>
-          <li class="btn-mark"><%= render "chores/switch", chore: chore %></li>
         </ul>
-          <% if chore.completed %>
-          <i class="far fa-check-circle fa-2x mark-done"></i>
-        <% else %>
-          <i class="far fa-check-circle fa-2x mark-yet"></i>
-        <% end %>
+        <li class="btn-mark"><%= render "chores/switch", chore: chore %></li>
       </div>
     </div>
   <% end %>

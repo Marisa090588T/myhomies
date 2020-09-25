@@ -77,15 +77,18 @@
   color: #DFE0E5;
 }
 
-.mark-done {
+.far.fa-check-circle.fa-2x.mark-done {
   color: $green;
 }
 
-.mark-yet {
+.far.fa-check-circle.fa-2x.mark-yet {
   color: gray;
 }
 
 .btn-mark {
   margin-top: 10px;
+    a:hover {
+    text-decoration: none;
+  }
 }
 

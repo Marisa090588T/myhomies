@@ -31,7 +31,7 @@ $message-out: #FFE3C0;
 }
 
 a:hover{
-  background-color: #4CAF50;
+  background-color: transparent !important;
 }
 
 .add-button {
@@ -88,7 +88,7 @@ a:hover{
 .navbar-bottom a {
   font-size: 24px;
   max-height: 50px;
-  color: $yellow;
+  color: $yellow !important;
   margin: auto;
 }
 
@@ -98,10 +98,17 @@ a:hover{
 
 
 .navbar-fixed-bottom {
-  color: $yellow;
+  // color: $yellow;
   width: 100%;
+  background-color: #1f4552;
+  border: #1f4552 !important;
+  border-width: 1px 0 0 !important;
 }
 
 .navbar {
-  background-color: #1f4552;
+  background-color: #1f4552 !important;
+}
+
+body {
+  background-color: #1f4552 !important;
 }
