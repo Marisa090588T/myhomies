@@ -22,8 +22,8 @@
         <ul>
           <li>Assigned to: <strong class="assignee-name"><%= chore.assignee.first_name %></strong></li>
           <li>Description: <%= chore.description %></li>
-          <li class="btn-mark"><%= render "chores/switch", chore: chore %></li>
         </ul>
+        <li class="btn-mark"><%= render "chores/switch", chore: chore %></li>
       </div>
     </div>
   <% end %>
