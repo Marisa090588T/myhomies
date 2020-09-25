@@ -83,10 +83,11 @@
 
 
     <%# invite %>
-  <div class="card-container">
+  <div class="card-container" style="width: 100%">
   <div class="card">
-    <div class="card-content">
-      <p> New homie? - send them this link </p>
+    <div class="card-content" style="
+    padding: 20px 30px">
+      <p> New homie? Invite them with this link! </p>
       <input type="text" value=<%= new_invitation_url(@home.invite_token) %> id="homie-invite-link">
 
       <button onclick="copyInviteLink()">Copy link</button>
@@ -105,7 +106,7 @@
       }
       </script>
 
-      <p><%= link_to 'refresh invite link', home_invitations_path(@home), method: :patch, remote: true %></p>
+      <p><%= link_to 'Refresh link', home_invitations_path(@home), method: :patch, remote: true %></p>
     </div>
       <% else %>
 
